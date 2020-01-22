@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 //insert form id
-var accountForm = $("#");
+var accountForm = $("#my-account-form");
 
 //form inputs
 var nameInput = $("#name");
@@ -10,8 +10,6 @@ var passwordInput = $("#password");
 var password2Input = $("#password2");
 var phoneInput = $("#phone");
 var companyInput = $("#company");
-
-
 
 $(accountForm).on("submit", function handleFormSubmit(event) {
         event.preventDefault();
@@ -38,9 +36,4 @@ function submitForm(form) {
       window.location.href = "/";
     });
   }
-
-
-
-
-
 });
