@@ -1,0 +1,81 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Josefin Sans', sans-serif;
+}
+
+html{
+     scroll-behavior: smooth;
+}
+
+body, html{
+     width: 100%;
+     height: 100%;
+}
+
+h1{
+     font-family: 'Righteous', cursive;
+}
+
+.navbar{
+     width: 100%;
+     position: fixed;
+     top: 0;
+     z-index: 99999;
+     background-color: black;
+}
+
+.navbar-inner{
+     padding: 20px 10px 20px 10px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+h1.logo-text{
+     color: white;
+}
+
+.nav-group{
+     list-style-type: none;
+     margin-top:10px;
+}
+
+.nav-link-text{
+     color: white;
+}
+
+.hero-img{
+     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://external-preview.redd.it/XCTVIhr4EElXe3kgRt3cKiNlfHpS5xEUqEChHRoSjTI.jpg?auto=webp&s=fef5917af72b33d71eab15521dec8b6a89f53f07");
+     height: 100%;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     position: relative;
+   }
+   
+   .hero-txt {
+     text-align: center;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     color: white;
+   }
+   
+   .hero-txt button {
+     border: none;
+     outline: 0;
+     display: inline-block;
+     padding: 10px 25px;
+     color: black;
+     background-color: #ddd;
+     text-align: center;
+     cursor: pointer;
+   }
+   
+   .hero-txt button:hover {
+     background-color: #555;
+     color: white;
+   }
