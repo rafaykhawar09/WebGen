@@ -1,6 +1,6 @@
 *{
-     margin: 0;
-     padding: 0;
+     margin: 0 !important;
+     padding: 0 ! important;
      box-sizing: border-box;
      font-family: 'Josefin Sans', sans-serif;
 }
@@ -16,33 +16,34 @@ body, html{
 
 h1{
      font-family: 'Righteous', cursive;
+     
 }
 
-.navbar{
+.my-navbar{
      width: 100%;
      position: fixed;
      top: 0;
      z-index: 99999;
-     background-color: black;
+     background-color: #1f2430;
 }
 
-.navbar-inner{
+.my-navbar-inner{
      padding: 20px 10px 20px 10px;
      display: flex;
      justify-content: space-between;
      align-items: center;
 }
 
-h1.logo-text{
+h1.my-logo-text{
      color: white;
 }
 
-.nav-group{
+.my-nav-group{
      list-style-type: none;
      margin-top:10px;
 }
 
-.nav-link-text{
+.my-nav-link-text{
      color: white;
 }
 
@@ -53,18 +54,18 @@ h1.logo-text{
      background-repeat: no-repeat;
      background-size: cover;
      position: relative;
-   }
-   
-   .hero-txt {
+}
+
+.hero-txt {
      text-align: center;
      position: absolute;
      top: 50%;
      left: 50%;
      transform: translate(-50%, -50%);
      color: white;
-   }
-   
-   .hero-txt button {
+}
+
+.hero-txt button {
      border: none;
      outline: 0;
      display: inline-block;
@@ -73,9 +74,19 @@ h1.logo-text{
      background-color: #ddd;
      text-align: center;
      cursor: pointer;
-   }
-   
-   .hero-txt button:hover {
+}
+
+.hero-txt button:hover {
      background-color: #555;
      color: white;
-   }
+}
+
+.my-modal{
+     width: 60vw;
+     background-color: whitesmoke;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 999999999;
+}

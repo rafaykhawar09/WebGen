@@ -12,36 +12,109 @@
 
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-     <link rel="stylesheet" href="../assets/css/style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-     <div id="nav" class="navbar"> <!--Navbar start-->
-          <div class="navbar-inner"> <!--Navbar-Inner Start-->
-               <div class="logo"> <!--Logo Start-->
-                    <h1 class="logo-text">WebGen</h1>
-               </div> <!--Logo End-->
-               
-               <ul class="nav-group"> <!--Navgroup Start-->
-                    <li class="nav-link">
-                         <a href="#about" class="nav-link-text"><i class="fas fa-users"></i>ABOUT US</a>
+     <div id="my-nav" class="my-navbar">
+          <!--my-Navbar start-->
+          <div class="my-navbar-inner">
+               <!--my-Navbar-Inner Start-->
+               <div class="my-logo">
+                    <!--my-Logo Start-->
+                    <h1 class="my-logo-text">WebGen</h1>
+               </div>
+               <!--my-Logo End-->
+
+               <ul class="my-nav-group">
+                    <!--my-Navgroup Start-->
+                    <li class="my-nav-link">
+                         <a href="#about" class="my-nav-link-text"><i class="fas fa-users"></i>ABOUT US</a>
                     </li>
-               </ul> <!--Navgroup End-->
-          </div> <!--Navbar-Inner End-->
-     </div> <!--Navbar end-->
+               </ul>
+               <!--my-Navgroup End-->
+          </div>
+          <!--my-Navbar-Inner End-->
+     </div>
+     <!--my-Navbar end-->
 
      <div class="hero-img">
           <div class="hero-txt">
-            <h1 style="font-size:50px">WebGen</h1>
-            <p>And I'm a Photographer</p>
-            <button>Create Your Account</button>
+               <h1 style="font-size:50px">WebGen</h1>
+               <p>And I'm a Photographer</p>
+               <button>Create Your Account</button>
           </div>
-        </div>
+     </div>
 
+     <div class="my-modal">
+          <div class="container">
+               <div class="row">
+                    <div class="col s12">
+
+                         <form id="my-account-form">
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Name</h6>
+                                        <input type="text" id="autocomplete-input name" class="autocomplete">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+                              
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Email</h6>
+                                        <input type="text" id="autocomplete-input email" class="autocomplete">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+                              
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Password</h6>
+                                        <input type="text" id="autocomplete-input password" class="autocomplete">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+                              
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Re-enter Password</h6>
+                                        <input type="text" id="autocomplete-input password2" class="autocomplete">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+                              
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Phone Number</h6>
+                                        <input type="text" id="autocomplete-input phone" class="autocomplete">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+                              
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Company Name</h6>
+                                        <input type="text" id="autocomplete-input company" class="autocomplete">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+                              
+                              <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                              </button>
+                         </form>
+                    </div>
+               </div>
+          </div>
+     </div>
 
      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-     <script src="navbar.js"></script>
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+
+     <script src="../js/index.js"></script>
 </body>
 
 </html>
