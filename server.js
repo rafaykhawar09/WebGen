@@ -20,6 +20,8 @@ app.use(express.static("public"));
 // require("./routes/html-routes.js")(app);
 const htmlRoutes = require('./controllers/htmlController');
 app.use(htmlRoutes)
+const accountRoutes = require("./controllers/accountController");
+app.use(accountRoutes)
 
 
 // Syncing our sequelize models and then starting our Express app
