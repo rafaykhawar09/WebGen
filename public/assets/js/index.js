@@ -10,10 +10,11 @@ var passwordInput = $("#password");
 var password2Input = $("#password2");
 var phoneInput = $("#phone");
 var companyInput = $("#company");
+var submitBtn = $(".submit-button")
 
-$(accountForm).on("submit", function handleFormSubmit(event) {
+$(submitBtn).on("submit", function handleFormSubmit(event) {
         event.preventDefault();
-        // Wont submit the post if we are missing any fields
+        // Wont submit the post if we are missing any fields or if passwords dont match
         if (!nameInput.val().trim() || !emailInput.val().trim() || !passwordInput.val().trim() || !password2Input.val().trim() || !phoneInput.val().trim() || !companyInput.val().trim() || passwordInput != password2Input) {
           return;
         }
@@ -32,6 +33,8 @@ $(accountForm).on("submit", function handleFormSubmit(event) {
 })
 
 function submitForm(form) {
+    console.log(form);
+    
     $.post("/createuser", form, function() {
       window.location.href = "/";
     });
