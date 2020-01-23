@@ -18,8 +18,17 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 // require("./routes/html-routes.js")(app);
+app.get('/rolesandpriv',function(req,res){
+  db.Role.findAll({
+    include:[db.Privilege]
+  }).then(data=>{
+    res.json(data);
+  })
+})
 const htmlRoutes = require('./controllers/htmlController');
 app.use(htmlRoutes)
+const accountRoutes = require("./controllers/accountController");
+app.use(accountRoutes)
 
 
 // Syncing our sequelize models and then starting our Express app

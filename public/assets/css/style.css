@@ -91,6 +91,24 @@ h1.my-logo-text{
      z-index: 999999999;
 }
 
+
 .hidden{
      display: none;
+
+.content {
+     width: 60vw;
+     position: absolute;
+     top: 50%;
+     left: 20%;
+
+}
+
+.about-us {
+     font-size: 20px;
+     background-color: rgb(32, 32, 32);
+     /* margin: 50px; */
+     /* padding: 50px; */
+     /* border-width: 50px; */    
+     border-radius: 5%;
+
 }
