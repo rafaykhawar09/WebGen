@@ -12,16 +12,24 @@ router.post("/createuser", function(req, res) {
         phone:req.body.phone,
         route:req.body.company.toLowerCase()
       }).then(function(data){
-        res.send(data)
+          console.log("this is .then");
+          
+        db.User.create({
+            email:req.body.email,
+            name:req.body.name,
+            password:req.body.password,
+            AccountId:1
+          }).then(function(data){
+            res.send(data)
+          })
+       
+      }).catch(function(err){
+          console.log(err);
+          if (err)
+          console.log(err);
+          
       })
-    db.User.create({
-        email:req.body.email,
-        name:req.body.name,
-        password:req.body.password,
-        Roleid:1
-      }).then(function(data){
-        res.send(data)
-      })
+   
     })
 
 module.exports = router;
