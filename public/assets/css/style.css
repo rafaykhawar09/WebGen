@@ -90,3 +90,7 @@ h1.my-logo-text{
      transform: translate(-50%, -50%);
      z-index: 999999999;
 }
+
+.hidden{
+     display: none;
+}
