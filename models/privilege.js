@@ -10,13 +10,13 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Privilege.associate = function(models) {
-    // We're saying that a Privilege should belong to an Author
-    // A Privilege can't be created without an Author due to the foreign key constraint
-    Privilege.belongsTo(models.Role, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
+    Privilege.hasMany(models.Role, {});
+
+    // Privilege.belongsTo(models.Role, {
+    //   foreignKey: {
+    //     allowNull: false
+    //   }
+    // });
   };
 
   return Privilege;
