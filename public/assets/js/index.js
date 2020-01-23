@@ -19,6 +19,8 @@ $(submitBtn).on("submit", function handleFormSubmit(event) {
           return;
         }
         // Constructing a newPost object to hand to the database
+        console.log(nameInput.val());
+        
         var newSubmission = {
           name: nameInput.val().trim(),
           email: emailInput.val().trim(),
