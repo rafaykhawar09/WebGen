@@ -104,3 +104,11 @@ db.Menu_sub_category.bulkCreate([
     console.log(dbPrivilege);
 
 });
+
+db.Area.bulkCreate([ 
+    {area_name: "Dining Room"},
+    {area_name: "Lounge"},
+    {area_name: "Patio"},
+]).then(function (dbArea) {
+    console.log(dbArea);
+});
