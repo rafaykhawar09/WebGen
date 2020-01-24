@@ -36,7 +36,7 @@ $(document).ready(function () {
       phone: phoneInput.val().trim(),
       company: companyInput.val().trim(),
       address: addressInput.val().trim(),
-      url: companyInput.val().trim().toLowerCase().replace(/[^\w\s]/gi, '')
+      url: companyInput.val().trim().toLowerCase().replace(/[^\w]/gi, '')
     };
     console.log(newSubmission);
 
