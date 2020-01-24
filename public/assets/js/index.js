@@ -49,7 +49,7 @@ $(document).ready(function () {
 
     $.post("/createuser", form, function () {
 
-      window.location.href = "/";
+      window.location.href = `/${form.url}`;
     });
   }
 
