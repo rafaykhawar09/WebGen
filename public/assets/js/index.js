@@ -14,7 +14,7 @@ $(document).ready(function () {
   var companyInput = $(".company");
   var addressInput = $(".address");
 
-  var url;
+  var url=[]
 
   var submitBtn = $(".submit-button");
 
@@ -83,8 +83,8 @@ $(document).ready(function () {
   }, (error, result) => {
     if (!error && result && result.event === "success") {
       console.log('Done! Here is the image info: ', result.info.url);
-      $.post(`/${url}/picture`, result.info.url, function () {
-        console.log(result.info.url);
+      $.post(`/biss/picture`, {picture_url:result.info.url}, function () {
+        console.log("AA");
         
         // window.location.href = `/${form.url}`;
       });
@@ -92,6 +92,8 @@ $(document).ready(function () {
     }
   }
   )
+  console.log(url);
+  
 
   
   document.getElementById("upload_widget").addEventListener("click", function () {
