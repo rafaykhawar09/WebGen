@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
       foreignKey: { allowNull: false}
     });
     Role.hasMany(models.User, {
-      // foreignKey: { allowNull: false}
+      foreignKey: { allowNull: false}
     // Role.hasOne(models.Privilege, { onDelete: "cascade" });
   })
 }

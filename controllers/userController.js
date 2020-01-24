@@ -17,12 +17,12 @@ router.post("/createuser", function(req, res) {
         phone:req.body.phone,
         route:req.body.url
       }).then(function(data){
-          
         db.User.create({
             email:req.body.email,
             name:req.body.name,
             password:req.body.password,
-            AccountId:1
+            AccountId:data.dataValues.id,
+            RoleId:1
           }).then(function(data){
             res.send(data)
           })
