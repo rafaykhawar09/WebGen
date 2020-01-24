@@ -91,6 +91,10 @@ h1.my-logo-text{
      z-index: 999999999;
 }
 
+
+.hidden{
+     display: none;}
+
 .content {
      width: 60vw;
      position: absolute;
@@ -106,4 +110,5 @@ h1.my-logo-text{
      /* padding: 50px; */
      /* border-width: 50px; */    
      border-radius: 5%;
+
 }

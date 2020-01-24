@@ -6,8 +6,9 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: "Restaurant"
     },
     company_name:{ type: DataTypes.STRING, allowNull: false},
+
     address: { type: DataTypes.STRING, allowNull: false},
-    phone:{ type: DataTypes.INTEGER, allowNull: false},
+    phone:{ type: DataTypes.TEXT, allowNull: false},
     route:DataTypes.STRING
   });
 
