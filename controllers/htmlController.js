@@ -13,6 +13,9 @@ var router = express.Router()
   router.get("/about", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/assets/html/about.html"));
   });
+  // router.get("/:bizName", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/assets/html/res-"));
+  // });
 
 
 module.exports = router;
