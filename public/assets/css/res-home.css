@@ -21,7 +21,7 @@ body{
      position: fixed;
      top: 0;
      z-index: 99999;
-     background-color: black;
+     background-color: #161616;
 }
 
 .navbar-inner{
@@ -147,11 +147,59 @@ h1.logo-text{
      position: fixed;
      bottom: 0;
      z-index: 99999;
-     background-color: black;
+     background-color: #161616;
 }
 .footer-inner{
      color: white;
      padding: 15px;
      display: flex;
      justify-content: space-around;
+}
+
+.sticky-nav{
+     position: fixed;
+     z-index: 999999;
+     top: 25%;
+     left: 0;
+     display: flex;
+}
+
+.sticky-menu{
+     height: 371px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: brown;
+     color: white;
+     writing-mode: vertical-rl;
+     text-orientation: mixed;
+}
+.sticky-menu:hover{
+     background-color: #b34d4d;
+}
+
+.sticky-menu i{
+     font-size: 40px;
+}
+
+.sticky-nav-link{
+     background-color: #364353;
+     padding: 20px;
+     list-style-type: none;
+     font-size: 18px;
+     color: white;
+     border-bottom: 1px solid black;
+}
+
+.sticky-nav-link:nth-of-type(6){
+     border: none;
+}
+
+.sticky-nav-link:hover{
+     background-color: #6b7888;
+     cursor: pointer;
+}
+
+.hidden{
+     display: none;
 }
