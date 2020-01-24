@@ -62,3 +62,37 @@ db.Privilege.bulkCreate(
         console.log(dbRole);
     });
 })
+
+db.Menu_category.bulkCreate([
+    { category_name: "None"},
+    { category_name: "Breakfast"},
+    { category_name: "Lunch"},
+    { category_name: "Dinner"},
+    { category_name: "Specials"},
+    { category_name: "Happy Hour"}
+],
+).then(function (dbPrivilege) {
+    console.log(dbPrivilege);
+
+});
+
+db.Menu_sub_category.bulkCreate([
+    { sub_category_name: "Appetizer"},
+    { sub_category_name: "Eggs"},
+    { sub_category_name: "Pancakes & Waffles"},
+    { sub_category_name: "Burgers"},
+    { sub_category_name: "Sandwiches"},
+    { sub_category_name: "Entres"},
+    { sub_category_name: "Beverages"},
+    { sub_category_name: "Meat & Poultry"},
+    { sub_category_name: "Pasta"},
+    { sub_category_name: "Seafood"},
+    { sub_category_name: "Vegetables"},
+    { sub_category_name: "Desserts"},
+    { sub_category_name: "Specials"},
+    { sub_category_name: "Soup & Salad"}
+],
+).then(function (dbPrivilege) {
+    console.log(dbPrivilege);
+
+});
