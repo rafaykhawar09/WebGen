@@ -12,7 +12,9 @@ $(document).ready(function(){
   var password2Input = $(".password2");
   var phoneInput = $(".phone");
   var companyInput = $(".company");
-  var submitBtn = $(".submit-button")
+  var addressInput = $(".address");
+
+  var submitBtn = $(".submit-button");
   
   $(submitBtn).on("click", function handleFormSubmit(event) {
           event.preventDefault();
