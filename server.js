@@ -27,8 +27,10 @@ app.get('/rolesandpriv',function(req,res){
 })
 const htmlRoutes = require('./controllers/htmlController');
 app.use(htmlRoutes)
-const userController = require("./controllers/userController");
-app.use(userController)
+const accountController = require("./controllers/accoutController");
+app.use(accountController)
+const pictureController = require("./controllers/pictureController");
+app.use(pictureController)
 
 
 // Syncing our sequelize models and then starting our Express app
