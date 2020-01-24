@@ -6,14 +6,28 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: "Restaurant"
     },
     company_name:{ type: DataTypes.STRING, allowNull: false},
+    address: { type: DataTypes.STRING, allowNull: false},
     phone:{ type: DataTypes.INTEGER, allowNull: false},
     route:DataTypes.STRING
   });
 
   Account.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
     Account.hasMany(models.User, {
+      onDelete: "cascade"
+    });
+    Account.hasMany(models.Hours, {
+      onDelete: "cascade"
+    });
+    Account.hasMany(models.Pdf_menus, {
+      onDelete: "cascade"
+    });
+    Account.hasMany(models.Web_content, {
+      onDelete: "cascade"
+    });
+    Account.hasMany(models.Menu, {
+      onDelete: "cascade"
+    });
+    Account.hasMany(models.Table, {
       onDelete: "cascade"
     });
   };

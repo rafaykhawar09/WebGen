@@ -18,6 +18,31 @@ module.exports = function(sequelize, DataTypes) {
         defaultValue: false
       },
     });
+
+    Menu.associate = function(models) {
+      Menu.belongsTo(models.Account, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+      Menu.belongsTo(models.Menu_category, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+      Menu.belongsTo(models.Menu_sub_category, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+      // Menu.hasOne(models.Menu_category, {
+      //   onDelete: "cascade"
+      // });
+      // Menu.hasOne(models.Menu_sub_category, {
+      //   onDelete: "cascade"
+      // });
+  };
+
     return Menu;
   };
   

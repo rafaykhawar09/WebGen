@@ -6,6 +6,14 @@ module.exports = function(sequelize, DataTypes) {
       special_request:DataTypes.STRING,
       party_size:DataTypes.INTEGER
     });
+    Reservation.associate = function(models) {
+      Reservation.belongsTo(models.Table, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+
     return Reservation;
   };
   
