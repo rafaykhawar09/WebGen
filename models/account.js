@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
     Account.hasMany(models.Pdf_menus, {
       onDelete: "cascade"
     });
-    Account.hasMany(models.Web_content, {
+    Account.hasOne(models.Web_content, {
       onDelete: "cascade"
     });
     Account.hasMany(models.Menu, {

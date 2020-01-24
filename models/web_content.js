@@ -1,9 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
     var Web_content = sequelize.define("Web_content", {
-      logo_url: DataTypes.STRING,
       color_scheme: DataTypes.STRING,
       description: { type: DataTypes.TEXT, allowNull: false},
       announcement: DataTypes.STRING,
+      our_story: DataTypes.BOOLEAN,
+      our_story_text: DataTypes.TEXT,
       advance_reservation_limit:{ type: DataTypes.INTEGER, defaultValue: 90},
     });
 
