@@ -3,16 +3,20 @@ var router = express.Router()
 var db = require("../models");
 
 
+
 router.post("/createuser", function(req, res) {
     console.log(req.body);
     
+
+  
+
     db.Account.create({
         account_owner:req.body.name,
         company_name:req.body.company,
+        address:req.body.address,
         phone:req.body.phone,
-        route:req.body.company.toLowerCase()
+        route:req.body.url
       }).then(function(data){
-          console.log("this is .then");
           
         db.User.create({
             email:req.body.email,
@@ -22,6 +26,7 @@ router.post("/createuser", function(req, res) {
           }).then(function(data){
             res.send(data)
           })
+          
        
       }).catch(function(err){
           console.log(err);
@@ -29,7 +34,7 @@ router.post("/createuser", function(req, res) {
           console.log(err);
           
       })
-   
+
     })
 
 module.exports = router;
