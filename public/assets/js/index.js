@@ -14,7 +14,11 @@ $(document).ready(function () {
   var companyInput = $(".company");
   var addressInput = $(".address");
 
+  var url;
+
   var submitBtn = $(".submit-button");
+
+
 
   $(submitBtn).on("click", function handleFormSubmit(event) {
     event.preventDefault();
@@ -26,7 +30,7 @@ $(document).ready(function () {
     // console.log(nameInput.val());
 
     //variable to clean up
-    // var url = $(".company").val().trim().toLowerCase().replace(/[^\w\s]/gi, '');
+    url = companyInput.val().trim().toLowerCase().replace(/[^\w]/gi, '');
 
 
     var newSubmission = {
@@ -36,7 +40,7 @@ $(document).ready(function () {
       phone: phoneInput.val().trim(),
       company: companyInput.val().trim(),
       address: addressInput.val().trim(),
-      url: companyInput.val().trim().toLowerCase().replace(/[^\w]/gi, '')
+      url: url
     };
     console.log(newSubmission);
 
@@ -78,13 +82,43 @@ $(document).ready(function () {
     uploadPreset: 'egwkh4lw'
   }, (error, result) => {
     if (!error && result && result.event === "success") {
-      console.log('Done! Here is the image info: ', result.info);
+      console.log('Done! Here is the image info: ', result.info.url);
+      $.post(`/${url}/picture`, result.info.url, function () {
+        console.log(result.info.url);
+        
+        // window.location.href = `/${form.url}`;
+      });
+
     }
   }
   )
+
+  
   document.getElementById("upload_widget").addEventListener("click", function () {
     myWidget.open();
   }, false);
+  
+
+  // const eventData = result.data;
+  // if (eventData.event === "queues-end") {
+  //   eventData.info.items.forEach((item) => {
+  //     console.log(`show completed for item with id: 
+  //     ${item.uploadInfo.public_id}`); //uploadInfo is the data returned in the upload response
+  //   });
+  // }
+
+  
+  
+//   result = {
+//     event: "queues-end",
+//     info: {} // information about all files processed by the api
+// };
 
 
+
+
+
+
+
+//end of documment.ready function
 });
