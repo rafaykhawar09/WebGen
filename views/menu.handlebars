@@ -1,51 +1,73 @@
+<div class="navbar">
+     <div class="navbar-inner">
+          <!--Navbar-Inner Start-->
 
-<body>
-     <div class="navbar">
-          <div class="navbar-inner"> <!--Navbar-Inner Start-->
-               
-               <div class="logo"> <!--Logo Start-->
-                    <h1 class="logo-text">Logo</h1>
-               </div> <!--Logo End-->
-               
-               <div class="hamburger"> <!--Hamburger Start-->
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-               </div> <!--Hamburger End-->
-               
-               <ul class="nav-group hidden"> <!--Navgroup Start-->
-                    <li class="nav-link"><a href="#" class="nav-link-text">Our Story</a></li>
-               
-                    <li class="nav-link"><a href="#" class="nav-link-text">Menu</a></li>
-               
-                    <li class="nav-link"><a href="#" class="nav-link-text">Contact & Reservations</a></li>
-               </ul> <!--Navgroup End-->
-               
-          </div> <!--Navbar-Inner End-->
+          <div class="logo">
+               <!--Logo Start-->
+               <h1 class="logo-text">Logo</h1>
+          </div>
+          <!--Logo End-->
+
+          <div class="hamburger">
+               <!--Hamburger Start-->
+               <div class="bar"></div>
+               <div class="bar"></div>
+               <div class="bar"></div>
+          </div>
+          <!--Hamburger End-->
+
+          <ul class="nav-group hidden">
+               <!--Navgroup Start-->
+               <li class="nav-link"><a href="#" class="nav-link-text">Our Story</a></li>
+
+               <li class="nav-link"><a href="#" class="nav-link-text">Menu</a></li>
+
+               <li class="nav-link"><a href="#" class="nav-link-text">Contact & Reservations</a></li>
+          </ul>
+          <!--Navgroup End-->
      </div>
+     <!--Navbar-Inner End-->
+</div>
 
-     <div class="main">
-          <div class="hero-img" style='background-image: url({{logo_url}})'>
-          {{!-- <div class="hero-img" style="background-image: url({{logo_url}});"> --}}
-               <div class="hero-txt">
-                    <h1 style="font-size:50px">Menu</h1>
-                    <p>BRAND STATEMENT</p>
-               </div>
-               <div class = "description-input">
-                   <p></p>
 
-               </div>
+<div class="container">
+
+     <div class="menu">
+          <h1 style="font-family: 'Georgia', sans-serif;">Menu</h1>
+          <h3>Insert menu info</h3>
+          <br>
+          <br>
+          <div>
+               <ul>
+                    {{#each Menu.menu_item}}
+                    <img class="someClass" src="{{Menu.picture_url}}">
+                    <li>
+                         <p class=menu-item>Item: {{Menu.menu_item}}</p>
+                         <p>Description: {{Menu.item_description}}</p>
+                         <p class=menu-item>Price: {{Menu.price}}</pclass= menu-item>
+                    </li>
+                    {{/each}}
+               </ul>
           </div>
 
+          <!-- <div class="items-right">
+    
+                </div> -->
      </div>
+</div>
 
-     <div class="footer">
-          <div class="footer-inner">
-               <span class="foot1">©Proudly created by WebGen</span>
-               <span class="foot1">Address, Postal Code. Tel:123-456-7890</span>
-          </div>
+
+
+
+
+
+<div class="footer">
+     <div class="footer-inner">
+          <span class="foot1">©Proudly created by WebGen</span>
+          <span class="foot1">Address, Postal Code. Tel:123-456-7890</span>
      </div>
+</div>
 
-     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+     <script src="../assets/js/res-scripts.js"></script>
