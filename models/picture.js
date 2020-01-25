@@ -6,13 +6,13 @@ module.exports = function(sequelize, DataTypes) {
       story_pic1_url: DataTypes.STRING,
       story_pic2_url: DataTypes.STRING
     });
-    // Picture.associate = function(models) {
-    //   Picture.belongsTo(models.Web_content, {
-    //     foreignKey: {
-    //       allowNull: false
-    //     }
-    //   });
-    // };
+    Picture.associate = function(models) {
+      Picture.belongsTo(models.Web_content, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
   
     return Picture;
   };
