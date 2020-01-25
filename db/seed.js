@@ -70,8 +70,7 @@ db.Menu_category.bulkCreate([
     { category_name: "Dinner"},
     { category_name: "Specials"},
     { category_name: "Happy Hour"}
-],
-).then(function (dbPrivilege) {
+]).then(function (dbPrivilege) {
     console.log(dbPrivilege);
 
 });
@@ -91,14 +90,7 @@ db.Menu_sub_category.bulkCreate([
     { sub_category_name: "Desserts"},
     { sub_category_name: "Specials"},
     { sub_category_name: "Soup & Salad"}
-],
-// db.Web_content.create({
-//     logo_url:"http://res.cloudinary.com/crunchy/image/upload/v1579900426/zfcoy0cweksi2zdlhzqk.jpg",
-//     color_scheme: "red",
-//     AccountId:1
-
-// })
-)
+])
 
 .then(function (dbPrivilege) {
     console.log(dbPrivilege);
