@@ -6,22 +6,41 @@ var navLinks = $(".nav-link");
 var rightIcon = $(".fa-caret-right");
 var leftIcon = $(".fa-caret-left");
 
+
+var storyLink = $(".story-link");
 var menuLink = $(".menu-link");
+var contactLink = $(".contact-link");
 
 var hiddenField = $(".hidden-field");
 
+$(storyLink).on("click", function addField(form) {
+     // console.log(form);
+
+     $.post(`/${hiddenField}/story`, form, function () {
+
+          window.location.href = `/${form.url}`;
+     });
+})
 $(menuLink).on("click", function addField(form) {
      // console.log(form);
- 
-     $.post(`/${hiddenField}/menu`, form, function () {
- 
-       window.location.href = `/${form.url}`;
-     });
-   })
 
-hamburger.on("click", function(){
-     
-     if(!(hamburger.hasClass("change")))
+     $.post(`/${hiddenField}/menu`, form, function () {
+
+          window.location.href = `/${form.url}`;
+     });
+})
+$(contactLink).on("click", function addField(form) {
+     // console.log(form);
+
+     $.post(`/${hiddenField}/contact`, form, function () {
+
+          window.location.href = `/${form.url}`;
+     });
+})
+
+hamburger.on("click", function () {
+
+     if (!(hamburger.hasClass("change")))
           hamburger.addClass("change");
      else
           hamburger.removeClass("change");
@@ -29,41 +48,41 @@ hamburger.on("click", function(){
      navGroup.slideToggle("slow");
 })
 
-navLinks.on("click", function(){
-     
-     if(hamburger.hasClass("change")){
+navLinks.on("click", function () {
+
+     if (hamburger.hasClass("change")) {
           hamburger.removeClass("change");
      }
 
-     if($(window).width() < 1000)
+     if ($(window).width() < 1000)
           navGroup.slideToggle("slow");
 });
 
-$(".sticky-menu").on("click", ()=>{
+$(".sticky-menu").on("click", () => {
      $(".sticky-nav-group-wrapper").toggle("slide");
 
-     if(rightIcon.hasClass("hidden")){
+     if (rightIcon.hasClass("hidden")) {
           rightIcon.removeClass("hidden");
           leftIcon.addClass("hidden");
      }
-     else{
+     else {
           rightIcon.addClass("hidden");
           leftIcon.removeClass("hidden");
      }
 });
 
 const modal = $(".employees");
-  modal.click(event => {
-    event.stopPropagation();
-  })
-  $(window).click((event) => {
+modal.click(event => {
+     event.stopPropagation();
+})
+$(window).click((event) => {
 
-    if (event.target.id === "manage-employees-btn") {
+     if (event.target.id === "manage-employees-btn") {
 
-      if (modal.hasClass("hidden")) {
-        modal.removeClass("hidden");
-      }
-    }
-    else
-      modal.addClass("hidden");
-  });
+          if (modal.hasClass("hidden")) {
+               modal.removeClass("hidden");
+          }
+     }
+     else
+          modal.addClass("hidden");
+});

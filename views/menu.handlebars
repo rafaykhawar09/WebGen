@@ -40,11 +40,11 @@
           <div>
                <ul>
                     {{#each Menu.menu_item}}
-                    <img class="someClass" src="{{Menu.picture_url}}">
+                    <img class="someClass" src="{{Menu.dataValues.picture_url}}">
                     <li>
-                         <p class=menu-item>Item: {{Menu.menu_item}}</p>
-                         <p>Description: {{Menu.item_description}}</p>
-                         <p class=menu-item>Price: {{Menu.price}}</pclass= menu-item>
+                         <p class=menu-item>Item: {{Menu.dataValues.menu_item}}</p>
+                         <p>Description: {{Menu.dataValues.item_description}}</p>
+                         <p class=menu-item>Price: {{Menu.dataValues.price}}</pclass= menu-item>
                     </li>
                     {{/each}}
                </ul>
@@ -70,4 +70,4 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-     <script src="../assets/js/res-scripts.js"></script>
+<script src="../assets/js/res-scripts.js"></script>
