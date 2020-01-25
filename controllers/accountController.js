@@ -4,7 +4,7 @@ var db = require("../models");
 
 
 
-router.post("/createuser", function(req, res) {
+router.post("/createaccount", function(req, res) {
     console.log(req.body);
     
 
