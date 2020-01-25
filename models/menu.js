@@ -3,8 +3,8 @@ module.exports = function(sequelize, DataTypes) {
       picture_url: DataTypes.STRING,
       menu_item: { type: DataTypes.STRING, allowNull: false},
       item_description: { type: DataTypes.STRING, allowNull: false},
-      price: { type: DataTypes.DECIMAL, allowNull: false},
-      optional_price: DataTypes.DECIMAL,
+      price: { type: DataTypes.DECIMAL(10, 2), allowNull: false},
+      optional_price: DataTypes.DECIMAL(10, 2),
       gluten_free_ind:{
         type: DataTypes.BOOLEAN,
         defaultValue: false
