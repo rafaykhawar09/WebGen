@@ -108,7 +108,7 @@ db.Account.create(
                                 AccountId: 1,
                                 MenuCategoryId: 3,
                                 MenuSubCategoryId: 2
-                            },
+                            }
                         ]).then(function (dbMenu) {
                             console.log(dbMenu);
 
