@@ -30,6 +30,26 @@ var db = require("../models");
         
       })
     });
+    router.get("/:bizName/menu", function(req, res) {
+      db.Account.findOne({
+        raw:true,
+        where:{route:req.params.bizName},
+
+      }).then(function(response){    
+        console.log(response.id);
+        db.Menu.findOne({
+          where:{AccountId:response.id},
+          include:[db.Menu_category],
+          include:[db.Menu_sub_category]
+        }).then(function(res){        
+          
+          res.render("index", res);
+          console.log(res);
+        }) 
+      })
+    });
+  
+  
 
 
 

@@ -51,7 +51,7 @@ $(document).ready(function () {
   function submitForm(form) {
     // console.log(form);
 
-    $.post("/createuser", form, function () {
+    $.post("/createaccount", form, function () {
 
       window.location.href = `/${form.url}`;
     });
