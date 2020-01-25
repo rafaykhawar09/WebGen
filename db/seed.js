@@ -76,20 +76,20 @@ db.Menu_category.bulkCreate([
 });
 
 db.Menu_sub_category.bulkCreate([
-    { sub_category_name: "Appetizer"},
-    { sub_category_name: "Eggs"},
-    { sub_category_name: "Pancakes & Waffles"},
-    { sub_category_name: "Burgers"},
-    { sub_category_name: "Sandwiches"},
-    { sub_category_name: "Entres"},
-    { sub_category_name: "Beverages"},
-    { sub_category_name: "Meat & Poultry"},
-    { sub_category_name: "Pasta"},
-    { sub_category_name: "Seafood"},
-    { sub_category_name: "Vegetables"},
-    { sub_category_name: "Desserts"},
-    { sub_category_name: "Specials"},
-    { sub_category_name: "Soup & Salad"}
+    { sub_category_name: "Appetizer", sort: 1},
+    { sub_category_name: "Eggs", sort: 1},
+    { sub_category_name: "Pancakes & Waffles", sort:2},
+    { sub_category_name: "Burgers", sort: 4},
+    { sub_category_name: "Sandwiches", sort: 3},
+    { sub_category_name: "Entrees", sort: 5},
+    { sub_category_name: "Beverages", sort: 99},
+    { sub_category_name: "Meat & Poultry", sort: 9},
+    { sub_category_name: "Pasta", sort: 7},
+    { sub_category_name: "Seafood", sort: 8},
+    { sub_category_name: "Vegetables", sort: 6},
+    { sub_category_name: "Desserts", sort: 30},
+    { sub_category_name: "Specials",sort:25},
+    { sub_category_name: "Soup & Salad", sort: 2}
 ])
 
 .then(function (dbPrivilege) {
