@@ -18,11 +18,13 @@
 
           <ul class="nav-group hidden">
                <!--Navgroup Start-->
-               <li class="nav-link"><a href="#" class="nav-link-text">Our Story</a></li>
+               <li class="nav-link"><a href="/{{dataValues.route}}/story" class="nav-link-text story-link">Our Story</a>
+               </li>
 
-               <li class="nav-link"><a href="#" class="nav-link-text menu-link">Menu</a></li>
+               <li class="nav-link"><a href="/{{dataValues.route}}/menu" class="nav-link-text menu-link">Menu</a></li>
 
-               <li class="nav-link"><a href="#" class="nav-link-text">Contact & Reservations</a></li>
+               <li class="nav-link"><a href="/{{dataValues.route}}/contact" class="nav-link-text contact-link">Contact &
+                         Reservations</a></li>
           </ul>
           <!--Navgroup End-->
 
@@ -34,8 +36,8 @@
      <div class="hero-img">
           {{!-- <div class="hero-img" style="background-image: url({{logo_url}});"> --}}
           <div class="hero-txt">
-               <h1 style="font-size:50px">{{account.company_name}}</h1>
-               <p>{{Web_content.description}}</p>
+               <h1 style="font-size:50px">{{dataValues.company_name}}</h1>
+               <p>{{Web_content.dataValues.description}}</p>
           </div>
 
      </div>
@@ -50,8 +52,10 @@
 </div>
 
 <div class="hidden-field hidden">
-
+     {{dataValues.route}}
 </div>
+
+<script> document.title = '{{dataValues.route}}' </script>
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
