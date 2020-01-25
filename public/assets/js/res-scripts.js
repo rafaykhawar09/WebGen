@@ -6,6 +6,19 @@ var navLinks = $(".nav-link");
 var rightIcon = $(".fa-caret-right");
 var leftIcon = $(".fa-caret-left");
 
+var menuLink = $(".menu-link");
+
+var hiddenField = $(".hidden-field");
+
+$(menuLink).on("click", function addField(form) {
+     // console.log(form);
+ 
+     $.post(`/${hiddenField}/menu`, form, function () {
+ 
+       window.location.href = `/${form.url}`;
+     });
+   })
+
 hamburger.on("click", function(){
      
      if(!(hamburger.hasClass("change")))
@@ -38,3 +51,19 @@ $(".sticky-menu").on("click", ()=>{
           leftIcon.removeClass("hidden");
      }
 });
+
+const modal = $(".employees");
+  modal.click(event => {
+    event.stopPropagation();
+  })
+  $(window).click((event) => {
+
+    if (event.target.id === "manage-employees-btn") {
+
+      if (modal.hasClass("hidden")) {
+        modal.removeClass("hidden");
+      }
+    }
+    else
+      modal.addClass("hidden");
+  });

@@ -144,7 +144,7 @@ h1.logo-text{
 
 .footer{
      width: 100%;
-     position: fixed;
+     position: absolute;
      bottom: 0;
      z-index: 99999;
      background-color: #161616;
@@ -202,4 +202,43 @@ h1.logo-text{
 
 .hidden{
      display: none;
+}
+
+
+
+.menu {
+     padding-top: 77px;
+     /* background-color: #555; */
+     /* position: absolute; */
+     width: 60%;
+     margin: auto;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+}
+
+
+
+
+.container {
+     background-color: rgb(151, 81, 0);
+     height: 100%;
+
+}
+
+.menu-item {
+     color: #00be39;
+     font-size: 22px;
+     font-family: 'Josefin Sans', sans-serif;
+}
+
+.my-modal{
+     font-size: 25px;
+     width: 60vw;
+     background-color: whitesmoke;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 999999999;
 }

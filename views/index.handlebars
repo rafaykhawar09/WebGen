@@ -1,51 +1,60 @@
+<div class="navbar">
+     <div class="navbar-inner">
+          <!--Navbar-Inner Start-->
 
+          <div class="logo">
+               <!--Logo Start-->
+               <h1 class="logo-text">{{account.company_name}}</h1>
+          </div>
+          <!--Logo End-->
 
-     <div class="navbar">
-          <div class="navbar-inner"> <!--Navbar-Inner Start-->
-               
-               <div class="logo"> <!--Logo Start-->
-                    <h1 class="logo-text">Logo</h1>
-               </div> <!--Logo End-->
-               
-               <div class="hamburger"> <!--Hamburger Start-->
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-               </div> <!--Hamburger End-->
-               
-               <ul class="nav-group hidden"> <!--Navgroup Start-->
-                    <li class="nav-link"><a href="#" class="nav-link-text">Our Story</a></li>
-               
-                    <li class="nav-link"><a href="#" class="nav-link-text">Menu</a></li>
-               
-                    <li class="nav-link"><a href="#" class="nav-link-text">Contact & Reservations</a></li>
-               </ul> <!--Navgroup End-->
-               
-          </div> <!--Navbar-Inner End-->
+          <div class="hamburger">
+               <!--Hamburger Start-->
+               <div class="bar"></div>
+               <div class="bar"></div>
+               <div class="bar"></div>
+          </div>
+          <!--Hamburger End-->
+
+          <ul class="nav-group hidden">
+               <!--Navgroup Start-->
+               <li class="nav-link"><a href="#" class="nav-link-text">Our Story</a></li>
+
+               <li class="nav-link"><a href="#" class="nav-link-text menu-link">Menu</a></li>
+
+               <li class="nav-link"><a href="#" class="nav-link-text">Contact & Reservations</a></li>
+          </ul>
+          <!--Navgroup End-->
+
      </div>
+     <!--Navbar-Inner End-->
+</div>
 
-     <div class="main">
-          <div class="hero-img" >
+<div class="main">
+     <div class="hero-img">
           {{!-- <div class="hero-img" style="background-image: url({{logo_url}});"> --}}
-               <div class="hero-txt">
-                    <h1 style="font-size:50px">LOGO</h1>
-                    <p>{{description}}</p>
-               </div>
-              
+          <div class="hero-txt">
+               <h1 style="font-size:50px">{{account.company_name}}</h1>
+               <p>{{Web_content.description}}</p>
           </div>
 
      </div>
 
-     <div class="footer">
-          <div class="footer-inner">
-               <span class="foot1">©Proudly created by WebGen</span>
-               <span class="foot1">Address, Postal Code. Tel:123-456-7890</span>
-          </div>
+</div>
+
+<div class="footer">
+     <div class="footer-inner">
+          <span class="foot1">©Proudly created by WebGen</span>
+          <span class="foot1">Address, Postal Code. Tel:123-456-7890</span>
      </div>
+</div>
 
-   
-     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<div class="hidden-field hidden">
 
-     <script src="../assets/js/res-scripts.js"></script>
+</div>
 
 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script src="../assets/js/res-scripts.js"></script>
