@@ -14,6 +14,9 @@ module.exports = function(sequelize, DataTypes) {
           allowNull: false
         }
       });
+      Web_content.hasMany(models.Picture),{
+        onDelete: "cascade"
+      }
     };
   
     return Web_content;

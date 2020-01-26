@@ -1,24 +1,26 @@
 var db = require("../models");
 
+let acctId = 2;
+let wcId = acctId
 
 db.Account.create(
     {
-        account_owner: "Joe",
+        account_owner: "bill@gmail.com",
         business_type: "Restaurant",
-        company_name: "Joe's Salmon House",
-        address: "123 Main Street, Seattle, WA  98101",
-        phone: "206.555.1212",
-        route: "joes"
+        company_name: "Bill's Road House",
+        address: "123 Center Street, Bellevue, WA  98004",
+        phone: "206.555.3434",
+        route: "bills"
     }
 ).then(function (dbAccount) {
     console.log(dbAccount);
 
     db.User.create(
         {
-            email: "Joe",
-            name: "Joe Blow",
-            password: "password",
-            AccountId: 1,
+            email: "bill"+acctId+"@gmail.com",
+            name: "Bill Smith",
+            password: "pass",
+            AccountId: acctId,
             RoleId: 1
         }
     ).then(function (dbUser) {
@@ -32,7 +34,7 @@ db.Account.create(
                 end_day: "Sunday",
                 open: "11:00 am",
                 close: "10:00 pm",
-                AccountId: 1
+                AccountId: acctId
             }
     ,
         ).then(function (dbHours) {
@@ -50,23 +52,23 @@ db.Account.create(
                     our_story: true,
                     our_story_text: "Our story starts in the a small town up in the hills of northern Italy...",
                     advance_reservation_limit: 90,
-                    AccountId: 1
+                    AccountId: acctId
                 }).then(function (dbWeb) {
                     console.log(dbWeb);
 
                     // });
 
 
-                    db.Picture.bulkCreate([
+                    db.Picture.create(
                         {
                             hero_image_url: "https://res.cloudinary.com/crunchy/image/upload/v1579900426/zfcoy0cweksi2zdlhzqk.jpg",
                             logo_url: "https://res.cloudinary.com/crunchy/image/upload/v1579899905/ehtlcxaune0yn29zl3ew.png",
                             story_background_url: "https://res.cloudinary.com/crunchy/image/upload/v1579908041/keigjw8t9b7zbx6wnyow.jpg",
                             story_pic1_url: "https://res.cloudinary.com/crunchy/image/upload/v1579908048/cqzmowflqmox4tudhytk.jpg",
                             story_pic2_url: "https://res.cloudinary.com/crunchy/image/upload/v1579908056/al9cj7xr8hxcriiidmv5.jpg",
-                            WebContentId: 1
+                            WebContentId: wcId
                         }
-                    ]).then(function (dbPics) {
+                    ).then(function (dbPics) {
                         console.log(dbPics);
                         // });
 
@@ -81,7 +83,7 @@ db.Account.create(
                                 gluten_free_ind: false,
                                 vegan_ind: false,
                                 vegetarian_ind: false,
-                                AccountId: 1,
+                                AccountId: acctId,
                                 MenuCategoryId: 4,
                                 MenuSubCategoryId: 8
                             },
@@ -93,7 +95,7 @@ db.Account.create(
                                 gluten_free_ind: false,
                                 vegan_ind: false,
                                 vegetarian_ind: false,
-                                AccountId: 1,
+                                AccountId: acctId,
                                 MenuCategoryId: 2,
                                 MenuSubCategoryId: 2
                             },
@@ -105,10 +107,10 @@ db.Account.create(
                                 gluten_free_ind: false,
                                 vegan_ind: false,
                                 vegetarian_ind: false,
-                                AccountId: 1,
+                                AccountId: acctId,
                                 MenuCategoryId: 3,
                                 MenuSubCategoryId: 2
-                            }
+                            },
                         ]).then(function (dbMenu) {
                             console.log(dbMenu);
 

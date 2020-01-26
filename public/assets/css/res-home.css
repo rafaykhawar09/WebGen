@@ -149,7 +149,7 @@ h1.logo-text{
 
 .footer{
      width: 100%;
-     position: fixed;
+     position: absolute;
      bottom: 0;
      z-index: 99999;
      background-color: #161616;
@@ -207,6 +207,7 @@ h1.logo-text{
 .hidden{
      display: none;
 }
+
 
 .customize-overlay{
      width: 100%;
@@ -285,6 +286,7 @@ h1.logo-text{
      top: 50%;
      left: 50%;
      transform: translate(-50%, -50%);
+
      z-index: 9999999;
      color: black;
 }
@@ -313,4 +315,5 @@ h1.logo-text{
      resize: none;
      border: none;
      outline: none;
+
 }

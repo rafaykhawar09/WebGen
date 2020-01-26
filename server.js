@@ -31,10 +31,14 @@ app.get('/rolesandpriv',function(req,res){
 })
 const htmlRoutes = require('./controllers/htmlController');
 app.use(htmlRoutes)
-const accountController = require("./controllers/accoutController");
+const accountController = require("./controllers/accountController");
 app.use(accountController)
+const menuController = require("./controllers/menuController");
+app.use(menuController)
 const pictureController = require("./controllers/pictureController");
 app.use(pictureController)
+const bizPostController = require("./controllers/bizPostController");
+app.use(bizPostController)
 
 
 // Syncing our sequelize models and then starting our Express app
