@@ -13,6 +13,10 @@ var contactLink = $(".contact-link");
 
 var hiddenField = $(".hidden-field");
 
+var loginBtn = $(".log-in-btn");
+var logOffBtn = $(".log-off-btn");
+
+
 $(storyLink).on("click", function addField(form) {
      // console.log(form);
 
