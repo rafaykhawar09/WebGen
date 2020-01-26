@@ -131,3 +131,64 @@
 // });
 
 
+
+//click handlers for CRUD functionality in modals
+var manageUsers = $("");
+var submitNewUserBtn = $("");
+var deleteUser = $("");
+var updateUser = $("");
+
+var userNameInput = $("");
+var userEmailInput = $("");
+var userPasswordInput = $("");
+
+
+$(manageUsers).on("click", function unhide(form) {
+     // console.log(form);
+
+     $.get(`/${hiddenField}/contact`, form, function () {
+
+          window.location.href = `/${form.url}`;
+     });
+})
+
+$(submitNewUser).on("click", function addUser(form) {
+     // console.log(form);
+
+     $.post(`/${hiddenField}/user`, form, function () {
+
+          window.location.href = `/${form.url}`;
+     });
+})
+
+$(submitUserBtn).on("click", function addUser(event) {
+     event.preventDefault();
+   
+       var newSubmission = {
+       name: userNameInput.val().trim(),
+       email: userEmailInput.val().trim(),
+       password: userPasswordInput.val().trim(),       
+     };
+     console.log(newSubmission);
+ 
+     submitNewUser(newSubmission);
+ 
+   })
+ 
+   function submitForm(form) {
+     // console.log(form);
+ 
+     $.post("/createaccount", form, function () {
+ 
+       window.location.href = `/${form.url}`;
+     });
+   }
+
+   $(".log-on-btn").on("click", function logIn(form) {
+     // console.log(form);
+
+     $.post(`/${hiddenField}/config`, form, function () {
+
+          window.location.href = `/${form.url}/config`;
+     });
+});
