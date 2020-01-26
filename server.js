@@ -33,6 +33,8 @@ const htmlRoutes = require('./controllers/htmlController');
 app.use(htmlRoutes)
 const accountController = require("./controllers/accoutController");
 app.use(accountController)
+const menuController = require("./controllers/menuController");
+app.use(menuController)
 const pictureController = require("./controllers/pictureController");
 app.use(pictureController)
 
