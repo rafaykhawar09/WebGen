@@ -180,6 +180,7 @@ h1.logo-text{
 }
 .sticky-menu:hover{
      background-color: #b34d4d;
+     cursor:pointer;
 }
 
 .sticky-menu i{
@@ -220,7 +221,7 @@ h1.logo-text{
 .close-overlay{
      position: absolute;
      padding: 10px 15px;
-     top: 8.6%;
+     top: 84px;
      right: 0;
      color: white;
 }
@@ -251,7 +252,7 @@ h1.logo-text{
 
 #addHeroImg{
      position: absolute;
-     top: 10%;
+     top: 90px;
      left: 10px;
      color: white;
 }
@@ -286,7 +287,6 @@ h1.logo-text{
      top: 50%;
      left: 50%;
      transform: translate(-50%, -50%);
-
      z-index: 9999999;
      color: black;
 }
@@ -303,17 +303,29 @@ h1.logo-text{
 .modalStructure form{
      width:100%;
      height: 100%;
+     display: flex;
+     flex-direction: column;
+
 }
 
 #one-liner{
-     background: #171f30;
-     color: white;
      padding: 10px;
      font-size: medium;
      width:100%;
-     height: 100%;
+     height: 200px;
      resize: none;
      border: none;
      outline: none;
+     background-color: #171f30;
+     color: white;
+}
 
+.submit-descript-btn{
+     width: 100%;
+     padding: 10px;
+     border: none;
+     background-color: #fd8e26;
+     color:white;
+     font-family: 'Audiowide', cursive;
+     font-size: 20px;
 }
