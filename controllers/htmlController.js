@@ -37,14 +37,14 @@ var db = require("../models");
 
       }).then(function(response){    
         console.log(response.id);
-        db.Menu.findOne({
+        db.Menu.findAll({
           where:{AccountId:response.id},
-          include:[db.Menu_category],
-          include:[db.Menu_sub_category]
-        }).then(function(res){        
+          include:[db.Menu_sub_category, db.Menu_category]
           
-          res.render("index", res);
-          console.log(res);
+        }).then(function(response){        
+          // res.json(response)
+          // console.log(response);
+          res.render("menu", {Menu:response});
         }) 
       })
     });
