@@ -4,7 +4,7 @@ var db = require("../models");
 
 
 // CREATE Route for Menu Items
-router.post("/:bizname/menu", function(req, res) {
+router.post("/:bizname/menu/config", function(req, res) {
     console.log("req.body");
     
     console.log(req.body);
@@ -31,7 +31,7 @@ router.post("/:bizname/menu", function(req, res) {
       });
 
 // UPDATE Route for Menu Items
-      router.put("/:bizname/menu", function(req, res) {
+      router.put("/:bizname/menu/config", function(req, res) {
         console.log(req.body);
       
         db.Menu.update({
@@ -55,7 +55,7 @@ router.post("/:bizname/menu", function(req, res) {
     
 
 // DELETE route for menu items
-  router.delete("/:bizname/menu/:id", function(req, res) {
+  router.delete("/:bizname/menu/config/:id", function(req, res) {
     db.Menu.destroy({
       where: {
         id: req.params.id

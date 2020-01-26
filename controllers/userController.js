@@ -4,7 +4,7 @@ var db = require("../models");
 
 
 // CREATE Route for User Items
-router.post("/:bizname/user", function(req, res) {
+router.post("/:bizname/config/user", function(req, res) {
     console.log("req.body");
     
     console.log(req.body);
@@ -30,7 +30,7 @@ router.post("/:bizname/user", function(req, res) {
       });
 
 // UPDATE Route for User Items
-      router.put("/:bizname/user", function(req, res) {
+      router.put("/:bizname/config/user", function(req, res) {
         console.log(req.body);
       
         db.User.update({
@@ -53,7 +53,7 @@ router.post("/:bizname/user", function(req, res) {
     
 
 // DELETE route for User items
-  router.delete("/:bizname/User/:id", function(req, res) {
+  router.delete("/:bizname/config/User/:id", function(req, res) {
     db.User.destroy({
       where: {
         id: req.params.id
