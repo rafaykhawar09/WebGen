@@ -32,7 +32,7 @@ var db = require("../models");
     });
     router.get("/:bizName/menu", function(req, res) {
       db.Account.findOne({
-        raw:true,
+        // raw:true,
         where:{route:req.params.bizName},
 
       }).then(function(response){    
@@ -41,10 +41,10 @@ var db = require("../models");
           where:{AccountId:response.id},
           include:[db.Menu_category],
           include:[db.Menu_sub_category]
-        }).then(function(res){        
+        }).then(function(response){        
           
-          res.render("index", res);
-          console.log(res);
+          res.render("menu", response);
+          console.log(response);
         }) 
       })
     });

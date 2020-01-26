@@ -39,12 +39,12 @@
           <br>
           <div>
                <ul>
-                    {{#each Menu.menu_item}}
-                    <img class="someClass" src="{{Menu.dataValues.picture_url}}">
+                    {{#each Menu}}
+                    <img class="someClass" src="{{dataValues.picture_url}}">
                     <li>
-                         <p class=menu-item>Item: {{Menu.dataValues.menu_item}}</p>
-                         <p>Description: {{Menu.dataValues.item_description}}</p>
-                         <p class=menu-item>Price: {{Menu.dataValues.price}}</pclass= menu-item>
+                         <p class=menu-item>Item: {{dataValues.menu_item}}</p>
+                         <p>Description: {{dataValues.item_description}}</p>
+                         <p class="menu-item">Price: {{dataValues.price}}</p>
                     </li>
                     {{/each}}
                </ul>
