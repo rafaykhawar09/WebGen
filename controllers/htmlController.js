@@ -48,6 +48,24 @@ var db = require("../models");
         }) 
       })
     });
+    router.get("/:bizName/config", function(req, res) {
+      db.Account.findOne({
+        // raw:true,
+        where:{route:req.params.bizName},
+
+      }).then(function(response){    
+        console.log(response.id);
+        db.Menu.findAll({
+          where:{AccountId:response.id},
+          include:[db.Menu_sub_category, db.Menu_category,db.User]
+          
+        }).then(function(response){        
+          // res.json(response)
+          // console.log(response);
+          res.render("config", {Menu:response});
+        }) 
+      })
+    });
   
   
 

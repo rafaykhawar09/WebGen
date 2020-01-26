@@ -37,7 +37,7 @@ const menuController = require("./controllers/menuController");
 app.use(menuController)
 const pictureController = require("./controllers/pictureController");
 app.use(pictureController)
-const bizPostController = require("./controllers/bizPostController");
+const bizPostController = require("./controllers/configPageController");
 app.use(bizPostController)
 
 
