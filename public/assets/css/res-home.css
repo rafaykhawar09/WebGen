@@ -329,3 +329,15 @@ h1.logo-text{
      font-family: 'Audiowide', cursive;
      font-size: 20px;
 }
+
+.modalStructure-header{
+     width: 100%;
+     padding: 10px;
+     background-color: #fd8e26;
+}
+
+.close-manage-employees-btn i{
+     position: fixed;
+     top: 5px;
+     right: 5px;
+}
