@@ -3,6 +3,21 @@ var router = express.Router()
 var db = require("../models");
 
 
+
+// Get route for managing menu
+router.get("/:bizName/menu/config", function(req, res) {
+  db.Menu.findAll({
+    where:{AccountId:response.Accountid},
+    include:[db.Menu_sub_category, db.Menu_category]
+    
+  }).then(function(response){        
+    // res.json(response)
+    // console.log(response);
+    res.render("config", {Menu:response});
+  }) 
+});
+
+
 // CREATE Route for Menu Items
 router.post("/:bizname/menu/config", function(req, res) {
     console.log("req.body");

@@ -2,6 +2,19 @@ var express = require("express")
 var router = express.Router()
 var db = require("../models");
 
+// Get route for managing users
+router.get("/:bizName/config/user", function(req, res) {
+      db.User.findAll({
+        where:{AccountId:response.Accountid},
+        include:[db.Role]
+        
+      }).then(function(response){        
+        // res.json(response)
+        // console.log(response);
+        res.render("config", {User:response});
+      }) 
+  });
+
 
 // CREATE Route for User Items
 router.post("/:bizname/config/user", function(req, res) {

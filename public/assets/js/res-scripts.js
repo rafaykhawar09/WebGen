@@ -133,6 +133,8 @@
 
 
 //click handlers for CRUD functionality in modals
+
+// These are User CRUD items
 var manageUsers = $("");
 var submitNewUserBtn = $("");
 var deleteUser = $("");
@@ -146,44 +148,74 @@ var userPasswordInput = $("");
 $(manageUsers).on("click", function unhide(form) {
      // console.log(form);
 
-     $.get(`/${hiddenField}/contact`, form, function () {
+     $.get(`/${hiddenField}/config/user`, form, function () {
 
           window.location.href = `/${form.url}`;
      });
 })
 
+
+// Not sure what this is doing
 $(submitNewUser).on("click", function addUser(form) {
      // console.log(form);
 
-     $.post(`/${hiddenField}/user`, form, function () {
+     $.post(`/${hiddenField}/config/user`, form, function () {
 
           window.location.href = `/${form.url}`;
      });
 })
-
+     // This adds a new user
 $(submitUserBtn).on("click", function addUser(event) {
      event.preventDefault();
    
-       var newSubmission = {
+       var newUser = {
        name: userNameInput.val().trim(),
        email: userEmailInput.val().trim(),
        password: userPasswordInput.val().trim(),       
      };
-     console.log(newSubmission);
+     console.log(newUser);
  
-     submitNewUser(newSubmission);
+     submitNewUser(newUser);
  
    })
  
-   function submitForm(form) {
+   function submitNewUser(form) {
      // console.log(form);
  
-     $.post("/createaccount", form, function () {
+     $.post(`/${hiddenField}/config/user`, form, function () {
  
        window.location.href = `/${form.url}`;
      });
    }
 
+     // This updates a user
+$(submitUserBtn).on("click", function addUser(event) {
+     event.preventDefault();
+     
+          var newUser = {
+          name: userNameInput.val().trim(),
+          email: userEmailInput.val().trim(),
+          password: userPasswordInput.val().trim(),       
+     };
+     console.log(newUser);
+     
+     submitNewUser(newUser);
+     
+     })
+     
+     function submitNewUser(form) {
+     // console.log(form);
+     
+     $.post(`/${hiddenField}/config/user`, form, function () {
+     
+          window.location.href = `/${form.url}`;
+     });
+     }
+     
+
+
+
+//    this is for the login button in the NavBar
    $(".log-on-btn").on("click", function logIn(form) {
      // console.log(form);
 
