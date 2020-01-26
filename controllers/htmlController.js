@@ -32,7 +32,7 @@ var db = require("../models");
     });
     router.get("/:bizName/menu", function(req, res) {
       db.Account.findOne({
-        raw:true,
+        // raw:true,
         where:{route:req.params.bizName},
 
       }).then(function(response){    
