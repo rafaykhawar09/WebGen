@@ -33,6 +33,8 @@ const htmlRoutes = require('./controllers/htmlController');
 app.use(htmlRoutes)
 const accountController = require("./controllers/accountController");
 app.use(accountController)
+const configPageController = require("./controllers/configPageController");
+app.use(configPageController)
 const webController = require("./controllers/webController");
 app.use(webController)
 const pictureController = require("./controllers/pictureController");
@@ -41,8 +43,8 @@ const userController = require("./controllers/userController");
 app.use(userController)
 const menuController = require("./controllers/menuController");
 app.use(menuController)
-const bizPostController = require("./controllers/bizPostController");
-app.use(bizPostController)
+
+
 
 
 // Syncing our sequelize models and then starting our Express app
