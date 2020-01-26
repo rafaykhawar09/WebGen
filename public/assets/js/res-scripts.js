@@ -21,6 +21,10 @@ var navbarHeight = navbar[0].scrollHeight;
 
 var stickyMenuBtnHeightCalcFlag = true;
 
+var textArea = $("#one-liner");
+textArea[0].innerText = (heroTxt[0].lastElementChild.innerText);
+
+
 hamburger.on("click", function () {
 
      if (!(hamburger.hasClass("change")))
@@ -81,6 +85,8 @@ customizePg.click(() => {
      }
 });
 
+
+
 jQuery("<div/>", {
      class: "heroTxt-overlay"
 }).appendTo(customizeOverlay);
@@ -100,7 +106,7 @@ jQuery("<i/>", {
 
 jQuery("<label/>", {
      for: "addDescription",
-     text: "Add a Description"
+     text: "Update a Description"
 }).appendTo(($("#addDescription")));
 
 
@@ -125,66 +131,71 @@ jQuery("<label/>", {
      text: "Add a Background Image"
 }).appendTo(($("#addHeroImg")));
 
-
+var descriptionModal = $("#add-description-modal");
+$("#addDescription").click(()=>{
+     if(descriptionModal.hasClass("hidden")){
+          descriptionModal.removeClass("hidden");
+     }
+});
 
 
 //click handlers for CRUD functionality in modals
-var manageUsers = $("");
-var submitNewUserBtn = $("");
-var deleteUser = $("");
-var updateUser = $("");
+// var manageUsers = $("");
+// var submitNewUserBtn = $("");
+// var deleteUser = $("");
+// var updateUser = $("");
 
-var userNameInput = $("");
-var userEmailInput = $("");
-var userPasswordInput = $("");
+// var userNameInput = $("");
+// var userEmailInput = $("");
+// var userPasswordInput = $("");
 
 
-$(manageUsers).on("click", function unhide(form) {
-     // console.log(form);
+// $(manageUsers).on("click", function unhide(form) {
+//      // console.log(form);
 
-     $.get(`/${hiddenField}/contact`, form, function () {
+//      $.get(`/${hiddenField}/contact`, form, function () {
 
-          window.location.href = `/${form.url}`;
-     });
-})
+//           window.location.href = `/${form.url}`;
+//      });
+// })
 
-$(submitNewUser).on("click", function addUser(form) {
-     // console.log(form);
+// $(submitNewUser).on("click", function addUser(form) {
+//      // console.log(form);
 
-     $.post(`/${hiddenField}/user`, form, function () {
+//      $.post(`/${hiddenField}/user`, form, function () {
 
-          window.location.href = `/${form.url}`;
-     });
-})
+//           window.location.href = `/${form.url}`;
+//      });
+// })
 
-$(submitUserBtn).on("click", function addUser(event) {
-     event.preventDefault();
+// $(submitUserBtn).on("click", function addUser(event) {
+//      event.preventDefault();
 
-     var newSubmission = {
-          name: userNameInput.val().trim(),
-          email: userEmailInput.val().trim(),
-          password: userPasswordInput.val().trim(),
-     };
-     console.log(newSubmission);
+//      var newSubmission = {
+//           name: userNameInput.val().trim(),
+//           email: userEmailInput.val().trim(),
+//           password: userPasswordInput.val().trim(),
+//      };
+//      console.log(newSubmission);
 
-     submitNewUser(newSubmission);
+//      submitNewUser(newSubmission);
 
-})
+// })
 
-function submitForm(form) {
-     // console.log(form);
+// function submitForm(form) {
+//      // console.log(form);
 
-     $.post("/createaccount", form, function () {
+//      $.post("/createaccount", form, function () {
 
-          window.location.href = `/${form.url}`;
-     });
-}
+//           window.location.href = `/${form.url}`;
+//      });
+// }
 
-$(".log-on-btn").on("click", function logIn(form) {
-     // console.log(form);
+// $(".log-on-btn").on("click", function logIn(form) {
+//      // console.log(form);
 
-     $.post(`/${hiddenField}/config`, form, function () {
+//      $.post(`/${hiddenField}/config`, form, function () {
 
-          window.location.href = `/${form.url}/config`;
-     });
-});
+//           window.location.href = `/${form.url}/config`;
+//      });
+// });
