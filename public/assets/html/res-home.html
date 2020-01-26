@@ -6,12 +6,44 @@
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>Homepage</title>
 
+     <link href="https://fonts.googleapis.com/css?family=Audiowide|Exo&display=swap" rel="stylesheet">
+
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
      <link rel="stylesheet" href="../assets/css/res-home.css">
+     <!-- <link rel="stylesheet" href="../css/res-home.css"> -->
 </head>
 
 <body>
+     <div class="customize-overlay hidden">
+          <div class="close-overlay">
+               <i class="fas fa-times"></i>
+          </div>
+
+          <div class="add-description-modal modalStructure">
+               <h4>Add a Description</h4>
+               <form>
+                    <textarea id="one-liner" placeholder="Type here..."></textarea>
+
+                    <!-- <input type="submit" value="Submit" class="submit-descript-btn" name="action"> -->
+               </form>
+          </div>
+
+          <!-- <div class="add-hero-img-modal modalStructure hidden">
+               
+          </div>
+
+          <div class="add-theme-modal modalStructure hidden">
+               
+          </div> -->
+     </div>
+
+     <div class="main-modal-bkg hidden">
+          <div class="main-modal">
+               
+          </div>
+     </div>
+
      <div class="navbar">
           <div class="navbar-inner"> <!--Navbar-Inner Start-->
                
@@ -40,24 +72,24 @@
           <div class="hero-img">
                <div class="hero-txt">
                     <h1 style="font-size:50px">LOGO</h1>
-                    <p>BRAND STATEMENT</p>
+                    <p>This is the coolest shit ever</p>
                </div>
           </div>
 
           <div class="sticky-nav">
                <div class="sticky-nav-group-wrapper">
                     <ul class="sticky-nav-group"> 
-                         <li class="sticky-nav-link">Customize Page</li>
+                         <li id="customize-page" class="sticky-nav-link">Customize Page</li>
                     
-                         <li class="sticky-nav-link">Manage Employees</li>
+                         <li id="manage-emps" class="sticky-nav-link">Manage Employees</li>
                     
-                         <li class="sticky-nav-link">Manage Menu</li>
+                         <li id="manage-menu" class="sticky-nav-link">Manage Menu</li>
                     
-                         <li class="sticky-nav-link">View/Print PDF Menu</li>
+                         <li id="view-pdf" class="sticky-nav-link">View/Print PDF Menu</li>
                     
-                         <li class="sticky-nav-link">Manage Reservations</li>
+                         <li id="manage-reservations" class="sticky-nav-link">Manage Reservations</li>
                     
-                         <li class="sticky-nav-link">View Reservations</li>
+                         <li id="view-reservations" class="sticky-nav-link">View Reservations</li>
                     </ul>
                </div>
                <div class="sticky-menu">
@@ -77,5 +109,6 @@
      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
      <script src="../assets/js/res-scripts.js"></script>
+     <!-- <script src="../js/res-scripts.js"></script> -->
 </body>
 </html>

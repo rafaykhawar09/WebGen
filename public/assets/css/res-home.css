@@ -2,6 +2,7 @@
      margin: 0;
      padding: 0;
      box-sizing: border-box;
+     font-family: 'Exo', sans-serif;
 }
 
 html{
@@ -13,6 +14,10 @@ html{
 body{
      width: 100%;
      height: 100%;
+}
+
+h1, h4{
+     font-family: 'Audiowide', cursive;
 }
 
 /* Navbar-CSS Starts */
@@ -159,13 +164,12 @@ h1.logo-text{
 .sticky-nav{
      position: fixed;
      z-index: 999999;
-     top: 25%;
+     top: 30%;
      left: 0;
      display: flex;
 }
 
 .sticky-menu{
-     height: 371px;
      display: flex;
      justify-content: center;
      align-items: center;
@@ -202,4 +206,111 @@ h1.logo-text{
 
 .hidden{
      display: none;
+}
+
+.customize-overlay{
+     width: 100%;
+     height: 100%;
+     background: rgba(0,0,0,0.6);
+     position: fixed;
+     z-index: 9999999;
+}
+
+.close-overlay{
+     position: absolute;
+     padding: 10px 15px;
+     top: 8.6%;
+     right: 0;
+     color: white;
+}
+.close-overlay i{
+     font-size: xx-large;
+}
+.close-overlay:hover{
+     cursor: pointer;         
+     background: #e23c3c;
+     z-index: 999999999999999 ;
+}
+
+.navbar-overlay{
+     position: absolute;
+     top: 0;
+     border: 5px solid #fd8e26;
+     /* border: 5px solid aqua; */
+}
+
+.heroTxt-overlay{
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     border: 5px solid #fd8e26;
+     /* border: 5px solid aqua; */
+}
+
+#addHeroImg{
+     position: absolute;
+     top: 10%;
+     left: 10px;
+     color: white;
+}
+
+#addTheme{
+     position: absolute;
+     font-size: large;
+     color: white;
+     margin:5px;
+}
+
+#addDescription{
+     position: absolute;
+     bottom: -30px;
+     left:-10px;
+     font-size: large;
+     color: white;
+     margin:5px;
+}
+
+.fa-plus-circle, .fa-plus-circle label{
+     cursor: pointer;
+}
+
+.modalStructure{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 30vw;
+     background: whitesmoke;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 9999999;
+     color: black;
+}
+
+.modalStructure h4{
+     padding: 5px;
+     background-color: #fd8e26;
+     color: #171f30;
+     width: 100%;
+     font-size: 30px;
+     text-align: center;
+}
+
+.modalStructure form{
+     width:100%;
+     height: 100%;
+}
+
+#one-liner{
+     background: #171f30;
+     color: white;
+     padding: 10px;
+     font-size: medium;
+     width:100%;
+     height: 100%;
+     resize: none;
+     border: none;
+     outline: none;
 }
