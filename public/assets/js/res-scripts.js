@@ -140,10 +140,12 @@ $("#addDescription").click(()=>{
 
 
 //click handlers for CRUD functionality in modals
+
 // var manageUsers = $("");
 // var submitNewUserBtn = $("");
 // var deleteUser = $("");
 // var updateUser = $("");
+
 
 // var userNameInput = $("");
 // var userEmailInput = $("");
@@ -153,11 +155,14 @@ $("#addDescription").click(()=>{
 // $(manageUsers).on("click", function unhide(form) {
 //      // console.log(form);
 
+
 //      $.get(`/${hiddenField}/contact`, form, function () {
+
 
 //           window.location.href = `/${form.url}`;
 //      });
 // })
+
 
 // $(submitNewUser).on("click", function addUser(form) {
 //      // console.log(form);
@@ -193,6 +198,7 @@ $("#addDescription").click(()=>{
 
 // $(".log-on-btn").on("click", function logIn(form) {
 //      // console.log(form);
+
 
 //      $.post(`/${hiddenField}/config`, form, function () {
 
