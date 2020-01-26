@@ -86,6 +86,14 @@ customizePg.click(() => {
 });
 
 
+$("#manage-emps").click(()=>{
+     if($("#manage-employee-modal").hasClass("hidden")){
+          $("#manage-employee-modal").removeClass("hidden");
+     }
+});
+
+
+
 
 jQuery("<div/>", {
      class: "heroTxt-overlay"
@@ -205,3 +213,26 @@ $("#addDescription").click(()=>{
 //           window.location.href = `/${form.url}/config`;
 //      });
 // });
+
+// this is for updating the Description on the client home page
+let updateDescBtn = $(".submit-descript-btn");
+let descText = $("#one-liner");
+$(updateDescBtn).on("click", function handleFormSubmit(event) {
+     event.preventDefault();
+      let newDesc = {
+       description: descText.val().trim(),
+     };
+     console.log(newDesc);
+      updateDesc(newDesc);
+   })
+function updateDesc(post) {
+     $.ajax({
+       method: "PUT",
+       url: `/${hiddenField}/config/web`,
+       data: post
+     })
+       .then(function() {
+         window.location.href = `/${form.url}`;
+       });
+   };
+ 
