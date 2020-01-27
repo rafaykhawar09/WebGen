@@ -1,10 +1,17 @@
+<div class="hidden-field hidden" id="route">
+     {{dataValues.route}}
+</div>
+<div class="hidden-field1 hidden" id="accountId">
+     {{dataValues.id}}
+</div>
+
 <div class="navbar">
      <div class="navbar-inner">
           <!--Navbar-Inner Start-->
 
           <div class="logo">
                <!--Logo Start-->
-               <h1 class="logo-text">{{account.company_name}}</h1>
+               <h1 class="logo-text">{{dataValues.company_name}}</h1>
           </div>
           <!--Logo End-->
 
@@ -27,12 +34,12 @@
                <li class="nav-link"><a href="/{{dataValues.route}}/contact" class="nav-link-text contact-link">Contact & Reservations</a>
                </li>
 
-               {{#if User.dataValues.email}}
-               <li class="nav-link-text log-off-btn" style="cursor: pointer"><u>Log Off</u></li>
+               {{!-- {{#if User.dataValues.email}} --}}
+               {{!-- <li class="nav-link-text log-off-btn" style="cursor: pointer"><u>Log Off</u></li> --}}
 
-               {{else}}
+               {{!-- {{else}} --}}
                <li class="nav-link-text log-in-btn" style="cursor: pointer"><u>Log In</u></li>
-               {{/if}}
+               {{!-- {{/if}} --}}
 
 
 
@@ -45,22 +52,24 @@
 
 <div class="main">
      <div class="hero-img">
-          {{!-- <div class="hero-img" style="background-image: url({{logo_url}});"> --}}
+          <div class="hero-img" style="background-image: url({{Web_content.dataValues.our_story_text}});">
           <div class="hero-txt">
+               <img src = {{Web_content.dataValues.announcement}} >
                <h1 style="font-size:50px">{{dataValues.company_name}}</h1>
                <p>{{Web_content.dataValues.description}}</p>
           </div>
 
      </div>
-{{!-- modals start  --}}
-<div class="add-description-modal modalStructure hidden">
-               <h4>Add a User</h4>
-               <form>
-                    <textarea id="one-liner" placeholder="Enter Name"></textarea>
-                    <textarea id="one-liner" placeholder="Email"></textarea>
-                    <textarea id="one-liner" placeholder="Password"></textarea>
 
-                    <input type="submit" value="Submit" class="submit-descript-btn" name="action">
+{{!-- modals start  --}}
+<div class="add-user-modal modalStructure hidden">
+               <h4>Add a User</h4>
+               <form id="add-user-form">
+                    <textarea id="new-user-name" placeholder="Enter Name"></textarea>
+                    <textarea id="new-user-email" placeholder="Enter Email"></textarea>
+                    <textarea id="new-user-password" placeholder="Enter Password"></textarea>
+
+                    <input type="submit" value="Submit" class="submit-add-user-btn" id="add-user-btn" name="action">
                </form>
           </div>
 
@@ -75,9 +84,6 @@
      </div>
 </div>
 
-<div class="hidden-field hidden">
-     {{dataValues.route}}
-</div>
 
 <script> document.title = '{{dataValues.route}}' </script>
 

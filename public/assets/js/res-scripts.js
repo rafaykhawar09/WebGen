@@ -18,15 +18,17 @@ var heroTxtHeight = heroTxt[0].scrollHeight;
 
 var navbarWidth = navbar[0].scrollWidth;
 var navbarHeight = navbar[0].scrollHeight;
-var hiddenField=$(".hidden-field")
-var route=hiddenField.text().trim()
-var hidden_field1=$(".hidden-field1")
-var accountId=hidden_field1.text().trim()
+
+// These are hidden fields in the HTML that allow us to pass the route and certain Ids 
+let routeField = $("#route")
+let route = routeField.text().trim()
+let accountField = $("#accountId")
+let accountId = accountField.text().trim()
 
 var stickyMenuBtnHeightCalcFlag = true;
 
-var textArea = $("#one-liner");
-textArea[0].innerText = (heroTxt[0].lastElementChild.innerText);
+// let textArea = $("#web-desc");
+// textArea[0].innerText = (heroTxt[0].lastElementChild.innerText);
 
 
 hamburger.on("click", function () {
@@ -118,7 +120,7 @@ jQuery("<i/>", {
 
 jQuery("<label/>", {
      for: "addDescription",
-     text: "Update a Description"
+     text: "Update Description"
 }).appendTo(($("#addDescription")));
 
 
@@ -150,48 +152,67 @@ $("#addDescription").click(()=>{
      }
 });
 
+//click handlers for CRUD functionality in modals
 
+
+// this updates the Description on the home page in Web_content table
 let updateDescBtn = $(".submit-descript-btn");
-let descText = $("#one-liner");
+let descText = $("#web-desc");
+
 $(updateDescBtn).on("click", function handleFormSubmit(event) {
      event.preventDefault();
       let newDesc = {
        description: descText.val().trim(),
        AccountId: accountId
      };
-     // console.log(response);
-     console.log("New Desc");
-     console.log(newDesc);
-     console.log("Route");
-     console.log(route);
       updateDesc(newDesc);
    })
 function updateDesc(post) {
      $.ajax({
        method: "PUT",
-       url: "/"+route+"/config/web",
+       url:  `/${route}/config/desc`,
        data: post
      })
        .then(function(form) {
-     //     window.location.href = `/${route}/config`;
+         window.location.href = `/${route}/config`;
      console.log(form);
      
        });
    };
-   console.log("/"+route+"/config/web");
    
 
-//click handlers for CRUD functionality in modals
-
-// var manageUsers = $("");
-// var submitNewUserBtn = $("");
-// var deleteUser = $("");
-// var updateUser = $("");
+// this adds, updates and deletes users
 
 
-// var userNameInput = $("");
-// var userEmailInput = $("");
-// var userPasswordInput = $("");
+  // This function constructs a row - we should try to do this on the manage users form
+  function createNewRow(todo) {
+     var $newInputRow = $(
+       [
+         "<li class='list-group-item todo-item'>",
+         "<span>",
+         todo.text,
+         "</span>",
+         "<input type='text' class='edit' style='display: none;'>",
+         "<button class='delete btn btn-danger'>x</button>",
+         "<button class='complete btn btn-primary'>✓</button>",
+         "</li>"
+       ].join("")
+     );
+ 
+     $newInputRow.find("button.delete").data("id", todo.id);
+     $newInputRow.find("input.edit").css("display", "none");
+     $newInputRow.data("todo", todo);
+     if (todo.complete) {
+       $newInputRow.find("span").css("text-decoration", "line-through");
+     }
+     return $newInputRow;
+   }
+ 
+   // var manageUsers = $("");
+let newUserBtn = $("#add-user-btn");
+let newUserName = $("#new-user-name");
+let newUserEmail = $("#new-user-email");
+let newUserPassword = $("#new-user-password");
 
 
 // $(manageUsers).on("click", function unhide(form) {
@@ -201,51 +222,102 @@ function updateDesc(post) {
 //      $.get(`/${hiddenField}/contact`, form, function () {
 
 
-//           window.location.href = `/${form.url}`;
+//           window.location.href = `/${route}/config`;
 //      });
 // })
 
+$(newUserBtn).on("click", function addUser(event) {
+     event.preventDefault();
 
-// $(submitNewUser).on("click", function addUser(form) {
-//      // console.log(form);
+     var newUser = {
+          name: newUserName.val().trim(),
+          email: newUserEmail.val().trim(),
+          password: newUserPassword.val().trim(),
+          // RoleId: userRoleId,
+          AccountId: accountId
+     };
+     console.log(newUser);
 
-//      $.post(`/${hiddenField}/user`, form, function () {
+     submitNewUser(newUser);
 
-//           window.location.href = `/${form.url}`;
-//      });
-// })
+})
 
-// $(submitUserBtn).on("click", function addUser(event) {
-//      event.preventDefault();
+function submitNewUser(form) {
+     $.post( `/${route}/config/user`, form, function () {
+// this will need to be changed to route the user back to the manage users form
+          window.location.href =  `/${route}/config`;
+     });
+}
 
-//      var newSubmission = {
-//           name: userNameInput.val().trim(),
-//           email: userEmailInput.val().trim(),
-//           password: userPasswordInput.val().trim(),
-//      };
-//      console.log(newSubmission);
+let updateUserBtn = $("#update-user-btn");
+let userName = $("#user-name");
+let userEmail = $("#user-email");
+let userPassword = $("#user-password");
 
-//      submitNewUser(newSubmission);
+$(updateUserBtn).on("click", function handleFormSubmit(event) {
+     event.preventDefault();
+      let updatedUser = {
+          name: userName.val().trim(),
+          email: userEmail.val().trim(),
+          password: userPassword.val().trim(),
+          // RoleId: userRoleId,
+          AccountId: accountId
+     };
+      updateUser(updatedUser);
+   })
+function updateUser(post) {
+     $.ajax({
+       method: "PUT",
+       url:  `/${route}/config/user`,
+       data: post
+     })
+       .then(function(form) {
+// this should stay on the same page but the users should refresh
+          //     window.location.href = `/${route}/config`;
+     // console.log(form);
+     
+       });
+   };
+   
+   let deleteUserBtn = $("#del-user-btn");
 
-// })
+   $(deleteUserBtn).on("click", function handleFormSubmit(event) {
+     event.preventDefault();
+      let updatedUser = {
+          name: userName.val().trim(),
+          email: userEmail.val().trim(),
+          password: userPassword.val().trim(),
+          // RoleId: userRoleId,
+          AccountId: accountId
+     };
+      updateUser(updatedUser);
+   })
 
-// function submitForm(form) {
-//      // console.log(form);
+   function deleteUser(id) {
+     $.ajax({
+       method: "DELETE",
+       url:  `/${route}/config/user` + id,
+     })
+       .then(function() {
+// this should stay on the same page but the users should refresh
+          //     window.location.href = `/${route}/config`;
+     // console.log(form);
+     
+       });
+   };
+   
 
-//      $.post("/createaccount", form, function () {
-
-//           window.location.href = `/${form.url}`;
-//      });
-// }
-
-// $(".log-on-btn").on("click", function logIn(form) {
-//      // console.log(form);
+// when the login form is done this will bring up the login form and route the user to the config page
+// right now it just routes the user to the config page
+$(".log-in-btn").on("click", function logIn() {
+     // $(".log-on-btn").on("click", function logIn(form) {
+     // console.log(form);
 
 
-//      $.post(`/${hiddenField}/config`, form, function () {
+     // $.post(`/${route}/config`, form, function () {
 
-//           window.location.href = `/${form.url}/config`;
-//      });
-// });
+          // window.location.href = `/${form.url}/config`;
+          window.location.href = `/${route}/config`;
+     // });
+});
 
-// this is for updating the Description on the client home page

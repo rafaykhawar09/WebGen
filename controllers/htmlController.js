@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 var db = require("../models");
 
-
+let myData = {};
   router.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/assets/html/index.html"));
   });
@@ -20,7 +20,7 @@ var db = require("../models");
     router.get("/:bizName", function(req, res) {
       db.Account.findOne({
         where:{route:req.params.bizName},
-        include:[{model: db.Web_content, include: [{model: db.Picture}]},
+        include:[{model: db.Web_content, include: {model: db.Picture}},
         {model: db.Hours}]
       }).then(function(response){        
         
