@@ -56,7 +56,7 @@ let myData = {};
           {model: db.Hours}]
         }).then(function(response){        
           // res.json(response)
-          res.render("config", response);
+          res.render("config", {account:response.dataValues, picture:response.dataValues.Web_content.Pictures[0], hours:response.dataValues.Hours[0]});
           console.log(response);
           
           
