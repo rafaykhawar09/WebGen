@@ -49,9 +49,9 @@ let myData = {};
             route,
             Menu:response
           }     
-          res.json(info)
+          // res.json(info)
           // console.log(response);
-          // res.render("menu", info);
+          res.render("menu", info);
         }) 
       })
     });
