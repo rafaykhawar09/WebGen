@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cloudinary": "^1.19.0",
     "cloudinary-core": "^2.8.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
