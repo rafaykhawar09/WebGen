@@ -65,7 +65,9 @@
                     <i class="fas fa-plus-circle add-employee-btn"></i>
                </div>
 
-               <div id="add-employee-form" class="hidden">
+               
+
+                <div id="add-employee-form" class="hidden">
                     <form>
                          <div class="form-inner">
                               <input type="text" id="name" placeholder="Name*">
@@ -73,8 +75,23 @@
                               <input type="text" id="email" placeholder="Email*">
                               
                               <input type="password" id="password" placeholder="Enter Password*">
+
+                              <div class="select-role">
+                                   <p>Please select Employee's Role:</p>
+                                        <input id="web-designer" type="radio" name="role" value="web">
+                                        <label for="web-designer">Web Designer</label><br>
+                                        
+                                        <input id="chef" type="radio" name="role" value="chef">
+                                        <label for="chef">Chef</label><br>
+     
+                                        <input id="hostess" type="radio" name="role" value="hostess">
+                                        <label for="hostess">Host/Hostess</label><br>
+                              </div>
                          </div>
-                    
+                         
+                         
+                         
+
                          <input type="submit" value="Submit" class="add-btn" name="action">
                     </form>
                </div>
@@ -96,13 +113,17 @@
                </div> <!--Hamburger End-->
                
                <ul class="nav-group hidden"> <!--Navgroup Start-->
-                    <li class="nav-link"><a href="#" class="nav-link-text">Our Story</a></li>
-               
-                    <li class="nav-link"><a href="#" class="nav-link-text">Menu</a></li>
-               
-                    <li class="nav-link"><a href="#" class="nav-link-text">Contact & Reservations</a></li>
+                    
+              
 
-                    <li class="nav-link-text log-off-btn" style="cursor: pointer"><u>Log Off</u></li>
+               <li class="nav-link"><a href="/{{dataValues.route}}/menu" class="nav-link-text menu-link">Menu</a>
+               </li>
+               <li class="nav-link"><a href="/{{dataValues.route}}" class="nav-link-text log-off-link">Log Off</a>
+               </li>
+
+    
+
+                    {{!-- <li class="nav-link-text log-off-btn" style="cursor: pointer"><u>Log Off</u></li> --}}
                </ul> <!--Navgroup End-->
 
           </div> <!--Navbar-Inner End-->
@@ -179,6 +200,7 @@
                                         <label for="autocomplete-input"></label>
                                    </div>
                               </div>
+
                               
                             
                               
