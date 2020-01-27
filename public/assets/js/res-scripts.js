@@ -18,6 +18,10 @@ var heroTxtHeight = heroTxt[0].scrollHeight;
 
 var navbarWidth = navbar[0].scrollWidth;
 var navbarHeight = navbar[0].scrollHeight;
+var hiddenField=$(".hidden-field")
+var route=hiddenField.text().trim()
+var hidden_field1=$(".hidden-field1")
+var accountId=hidden_field1.text().trim()
 
 var stickyMenuBtnHeightCalcFlag = true;
 
@@ -147,6 +151,36 @@ $("#addDescription").click(()=>{
 });
 
 
+let updateDescBtn = $(".submit-descript-btn");
+let descText = $("#one-liner");
+$(updateDescBtn).on("click", function handleFormSubmit(event) {
+     event.preventDefault();
+      let newDesc = {
+       description: descText.val().trim(),
+       AccountId: accountId
+     };
+     // console.log(response);
+     console.log("New Desc");
+     console.log(newDesc);
+     console.log("Route");
+     console.log(route);
+      updateDesc(newDesc);
+   })
+function updateDesc(post) {
+     $.ajax({
+       method: "PUT",
+       url: "/"+route+"/config/web",
+       data: post
+     })
+       .then(function(form) {
+     //     window.location.href = `/${route}/config`;
+     console.log(form);
+     
+       });
+   };
+   console.log("/"+route+"/config/web");
+   
+
 //click handlers for CRUD functionality in modals
 
 // var manageUsers = $("");
@@ -215,24 +249,3 @@ $("#addDescription").click(()=>{
 // });
 
 // this is for updating the Description on the client home page
-let updateDescBtn = $(".submit-descript-btn");
-let descText = $("#one-liner");
-$(updateDescBtn).on("click", function handleFormSubmit(event) {
-     event.preventDefault();
-      let newDesc = {
-       description: descText.val().trim(),
-     };
-     console.log(newDesc);
-      updateDesc(newDesc);
-   })
-function updateDesc(post) {
-     $.ajax({
-       method: "PUT",
-       url: `/${hiddenField}/config/web`,
-       data: post
-     })
-       .then(function() {
-         window.location.href = `/${form.url}`;
-       });
-   };
- 

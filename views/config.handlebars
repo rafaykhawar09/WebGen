@@ -1,15 +1,22 @@
-<div class="customize-overlay hidden">
+<div id="web-content" class="customize-overlay hidden">
     <div class="close-overlay">
         <i class="fas fa-times"></i>
     </div>
+    <div class="hidden-field hidden">
+        {{dataValues.route}}
+    </div>
+    <div class="hidden-field1 hidden">
+        {{dataValues.id}}
+    </div>
+    <div class="hidden" id="add-description-modal">
+        <div class=" modalStructure">
+            <h4>Add a Description</h4>
+            <form>
+                <textarea id="one-liner" ></textarea>
 
-    <div class="add-description-modal modalStructure">
-        <h4>Add a Description</h4>
-        <form>
-            <textarea id="one-liner" placeholder="Type here..."></textarea>
-
-            <!-- <input type="submit" value="Submit" class="submit-descript-btn" name="action"> -->
-        </form>
+                <input type="submit" value="Submit" class="submit-descript-btn" name="action">
+            </form>
+        </div>
     </div>
 
     <!-- <div class="add-hero-img-modal modalStructure hidden">
@@ -148,9 +155,10 @@
     </div>
 </div>
 
+
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 
-<!-- <script src="../assets/js/res-scripts.js"></script> -->
-<script src="../js/res-scripts.js"></script>
+<script src="../assets/js/res-scripts.js"></script>
+{{!-- <script src="../js/res-scripts.js"></script> --}}

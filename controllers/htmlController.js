@@ -50,7 +50,7 @@ var db = require("../models");
     });
    
       router.get("/:bizName/config", function(req, res) {
-        db.Account.findAll({
+        db.Account.findOne({
           where:{route:req.params.bizName},
           include:[{model: db.Web_content, include: [{model: db.Picture}]},
           {model: db.Hours}]
