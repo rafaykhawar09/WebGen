@@ -337,4 +337,70 @@ $(".log-in-btn").on("click", function logIn() {
           window.location.href = `/${route}/config`;
      // });
 });
+$(".log-off-btn").on("click", function logOff() {
+     // $(".log-on-btn").on("click", function logIn(form) {
+     // console.log(form);
 
+
+     // $.post(`/${route}/config`, form, function () {
+
+          // window.location.href = `/${form.url}/config`;
+          window.location.href = `/${route}/`;
+     // });
+});
+
+
+
+//cloudinary click handler
+var myBGWidget = cloudinary.createUploadWidget({
+     cloudName: 'crunchy',
+     uploadPreset: 'egwkh4lw'
+   }, (error, result) => {
+     if (!error && result && result.event === "success") {
+       console.log('Done! Here is the image info: ', result.info.url);
+       $.put(`/${route}/picture/background`, {picture_url:result.info.url}, function () {
+     //     console.log("AA");
+         
+         window.location.href = `/${form.url}`;
+       });
+ 
+     }
+     // console.log(result.info.url);
+   }
+   )
+
+   //WIDGET FOR LOGO, NEEDS BUTTON
+// var myLogoWidget = cloudinary.createUploadWidget({
+//      cloudName: 'crunchy',
+//      uploadPreset: 'egwkh4lw'
+//    }, (error, result) => {
+//      if (!error && result && result.event === "success") {
+//        console.log('Done! Here is the image info: ', result.info.url);
+//        $.put(`/${route}/picture/logo`, {picture_url:result.info.url}, function () {
+//      //     console.log("AA");
+         
+//          window.location.href = `/${form.url}`;
+//        });
+ 
+//      }
+//      // console.log(result.info.url);
+//    }
+//    )
+   
+ 
+   
+   document.getElementById("addHeroImg").addEventListener("click", function () {
+     myBGWidget.open();
+     if (!(customizeOverlay.hasClass("hidden"))) {
+          customizeOverlay.addClass("hidden");
+     }
+   }, false);
+
+
+     //WIDGET FOR LOGO, NEEDS BUTTON
+//    document.getElementById("addHeroImg").addEventListener("click", function () {
+//      myLogoWidget.open();
+//      if (!(customizeOverlay.hasClass("hidden"))) {
+//           customizeOverlay.addClass("hidden");
+//      }
+//    }, false);

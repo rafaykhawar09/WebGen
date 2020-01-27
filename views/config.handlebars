@@ -1,178 +1,205 @@
-<div class="hidden-field hidden" id="route">
-    {{dataValues.route}}
+
+     <div class="hidden-field hidden" id="route">
+     {{dataValues.route}}
 </div>
 <div class="hidden-field1 hidden" id="accountId">
-    {{dataValues.id}}
+     {{dataValues.id}}
 </div>
+     
+     
+     <div id="web-content" class="customize-overlay hidden">
+          <div class="close-overlay">
+               <i class="fas fa-times"></i>
+          </div>
 <div class="hidden-field1 hidden" id="contentId">
     {{Web_content.dataValues.id}}
 </div>
 
+          <div id="add-description-modal" class="hidden">
+               <div class="modalStructure">
+                    <h4>Update Description</h4>
+                    <form>
+                         <textarea id="one-liner"></textarea>
+                    
+                         <input type="submit" value="Submit" class="submit-descript-btn" name="action">
+                    </form>
+               </div>
+          </div>
+     </div>
 
-<div id="web-content" class="customize-overlay hidden">
-    <div class="close-overlay">
-        <i class="fas fa-times"></i>
-    </div>
-    <div class="hidden" id="add-description-modal">
-        <div class=" modalStructure">
-            <h4>Update Description</h4>
-            <form>
-                <textarea id="web-desc" >{{Web_content.dataValues.description}}</textarea>
-
-                <input type="submit" value="Submit" class="submit-descript-btn" name="action">
-            </form>
-        </div>
-    </div>
-
-    <!-- <div class="add-hero-img-modal modalStructure hidden">
+     <div id="manage-employee-modal" class="hidden">
+          <div class="modalStructure modalStructure2">
                
+               <i class="fas fa-times close-manage-employees-btn"></i>  
+
+               <div class="modalStructure-header">
+                    <h4>Manage Employees</h4>
+               </div>
+
+               <div class="manage-emp-body">
+                    <ul class="employee-list">
+                         <li class="an-employee">
+                              <div class="employee-info">
+                                   <div class="emp-name-field">
+                                        Name: <span class="emp-name"></span>
+                                   </div>
+                                   <div class="emp-email-field">
+                                        Email: <span class="emp-email"></span>
+                                   </div>
+                                   <div class="emp-password-field">
+                                        Role: <span class="emp-password"></span>
+                                   </div>
+                              </div>
+                              <div class="employee-btn-group">
+                                   <button id="update-employee-info">
+                                        <i class="fas fa-edit"></i>
+                                   </button>
+                                   
+                                   <button id="delete-employee">
+                                        <i class="fas fa-trash-alt"></i>
+                                   </button>
+                              </div>
+                         </li>
+                    </ul>
+
+                    <i class="fas fa-plus-circle add-employee-btn"></i>
+               </div>
+
+               <div id="add-employee-form" class="hidden">
+                    <form>
+                         <div class="form-inner">
+                              <input type="text" id="name" placeholder="Name*">
+                                        
+                              <input type="text" id="email" placeholder="Email*">
+                              
+                              <input type="password" id="password" placeholder="Enter Password*">
+                         </div>
+                    
+                         <input type="submit" value="Submit" class="add-btn" name="action">
+                    </form>
+               </div>
+          </div>
+     </div>
+     
+
+     <div class="navbar">
+          <div class="navbar-inner"> <!--Navbar-Inner Start-->
+               
+               <div class="logo"> <!--Logo Start-->
+                    <h1 class="logo-text">Logo</h1>
+               </div> <!--Logo End-->
+               
+               <div class="hamburger"> <!--Hamburger Start-->
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+               </div> <!--Hamburger End-->
+               
+               <ul class="nav-group hidden"> <!--Navgroup Start-->
+                    <li class="nav-link"><a href="#" class="nav-link-text">Our Story</a></li>
+               
+                    <li class="nav-link"><a href="#" class="nav-link-text">Menu</a></li>
+               
+                    <li class="nav-link"><a href="#" class="nav-link-text">Contact & Reservations</a></li>
+
+                    <li class="nav-link-text log-off-btn" style="cursor: pointer"><u>Log Off</u></li>
+               </ul> <!--Navgroup End-->
+
+          </div> <!--Navbar-Inner End-->
+     </div>
+
+     <div class="main">
+          <div class="hero-img">
+               <div class="hero-txt">
+                    <h1 style="font-size:50px">LOGO</h1>
+                    <p>This is the coolest shit ever</p>
+               </div>
           </div>
 
-          <div class="add-theme-modal modalStructure hidden">
-               
-          </div> -->
-</div>
+          <div class="sticky-nav">
+               <div class="sticky-nav-group-wrapper">
+                    <ul class="sticky-nav-group"> 
+                         <li id="customize-page" class="sticky-nav-link">Customize Page</li>
+                    
 
-<div class="main-modal-bkg hidden">
-    <div class="main-modal">
+                         <li id="manage-emps" class="sticky-nav-link">Manage Employees</li>
 
-    </div>
-</div>
+                    
+                         <li id="manage-menu" class="sticky-nav-link">Manage Menu</li>
+                    
+                         <li id="view-pdf" class="sticky-nav-link">View/Print PDF Menu</li>
+                    
+                         <li id="manage-reservations" class="sticky-nav-link">Manage Reservations</li>
+                    
+                         <li id="view-reservations" class="sticky-nav-link">View Reservations</li>
+                    </ul>
+               </div>
+               <div class="sticky-menu">
+                    <i class="fas fa-caret-left"></i>
+                    <i class="fas fa-caret-right hidden"></i>
+               </div>
+          </div>
+     </div>
 
-<div class="navbar">
-    <div class="navbar-inner">
-        <!--Navbar-Inner Start-->
+     <div class="my-modal employees hidden">
 
-        <div class="logo">
-            <!--Logo Start-->
-            <h1 class="logo-text">{{dataValues.company_name}}</h1>
-        </div>
-        <!--Logo End-->
+          <div class="container">
+               <div class="row">
+                    <div class="col s12">
 
-        <div class="hamburger">
-            <!--Hamburger Start-->
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <!--Hamburger End-->
-
-        <ul class="nav-group hidden">
-            <!--Navgroup Start-->
-            <li class="nav-link"><a href="/{{dataValues.route}}/story" class="nav-link-text">Our Story</a></li>
-
-            <li class="nav-link"><a href="/{{dataValues.route}}/menu/config" class="nav-link-text">Menu</a></li>
-
-            <li class="nav-link"><a href="/{{dataValues.route}}/contact" class="nav-link-text">Contact and Reservations</a></li>
-
-               {{!-- <li class="nav-link-text log-off-btn" style="cursor: pointer"><u>Log Off</u></li> --}}
-               <li class="nav-link-text log-off-btn" style="cursor: pointer"><a href="/{{dataValues.route}}" class="nav-link-text">Log Off</a></li>
-
-
-        </ul>
-        <!--Navgroup End-->
-
-    </div>
-    <!--Navbar-Inner End-->
-</div>
-
-<div class="main">
-    <div class="hero-img">
-          <div class="hero-img" style="background-image: url({{Web_content.dataValues.our_story_text}});">
-
-        <div class="hero-txt">
-            {{!-- <h1 style="font-size:50px">LOGO</h1> --}}
-               <img src = {{Web_content.dataValues.announcement}} >
-               <h1 style="font-size:50px">{{dataValues.company_name}}</h1>
-            <p>{{Web_content.dataValues.description}}</p>
-        </div>
-    </div>
-
-    <div class="sticky-nav">
-        <div class="sticky-nav-group-wrapper">
-            <ul class="sticky-nav-group">
-                <li id="customize-page" class="sticky-nav-link">Customize Page</li>
-
-
-                <li id="manage-emps" class="sticky-nav-link">Manage Employees</li>
-
-
-                <li id="manage-menu" class="sticky-nav-link">Manage Menu</li>
-
-                <li id="view-pdf" class="sticky-nav-link">View/Print PDF Menu</li>
-
-                <li id="manage-reservations" class="sticky-nav-link">Manage Reservations</li>
-
-                <li id="view-reservations" class="sticky-nav-link">View Reservations</li>
-            </ul>
-        </div>
-        <div class="sticky-menu">
-            <i class="fas fa-caret-left"></i>
-            <i class="fas fa-caret-right hidden"></i>
-        </div>
-    </div>
-</div>
-
-<div class="my-modal employees hidden">
-
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-
-                <form id="my-account-form">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <h6>Name</h6>
-                            <input type="text" id="autocomplete-input1 " class="autocomplete name">
-                            <label for="autocomplete-input"></label>
-                        </div>
+                         <form id="my-account-form">
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Name</h6>
+                                        <input type="text" id="autocomplete-input1 " class="autocomplete name">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+                              
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Email</h6>
+                                        <input type="text" id="autocomplete-input2 " class="autocomplete email">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+                              
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Password</h6>
+                                        <input type="text" id="autocomplete-input3 " class="autocomplete password">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+                              
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Re-enter Password</h6>
+                                        <input type="text" id="autocomplete-input4 " class="autocomplete password2">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+                              
+                            
+                              
+                              <button class="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
+                              </button>
+                         </form>
                     </div>
+               </div>
+          </div>
+     </div> 
 
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <h6>Email</h6>
-                            <input type="text" id="autocomplete-input2 " class="autocomplete email">
-                            <label for="autocomplete-input"></label>
-                        </div>
-                    </div>
+     <div class="footer">
+          <div class="footer-inner">
+               <span class="foot1">©Proudly created by WebGen</span>
+               <span class="foot1">Address, Postal Code. Tel:123-456-7890</span>
+          </div>
+     </div>
 
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <h6>Password</h6>
-                            <input type="text" id="autocomplete-input3 " class="autocomplete password">
-                            <label for="autocomplete-input"></label>
-                        </div>
-                    </div>
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
 
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <h6>Re-enter Password</h6>
-                            <input type="text" id="autocomplete-input4 " class="autocomplete password2">
-                            <label for="autocomplete-input"></label>
-                        </div>
-                    </div>
+     <!-- <script src="../assets/js/res-scripts.js"></script> -->
+     <script src="../assets/js/res-scripts.js"></script>
 
-
-
-                    <button class="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="footer">
-    <div class="footer-inner">
-        <span class="foot1">©Proudly created by WebGen</span>
-        <span class="foot1">Address, Postal Code. Tel:123-456-7890</span>
-    </div>
-</div>
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-
-<script src="../assets/js/res-scripts.js"></script>
-{{!-- <script src="../js/res-scripts.js"></script> --}}
