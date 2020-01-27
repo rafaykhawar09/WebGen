@@ -282,13 +282,13 @@ h1.logo-text{
      flex-direction: column;
      align-items: center;
      width: 30vw;
-     background: whitesmoke;
+     background: #171f30;
+     color: white;
      position: absolute;
      top: 50%;
      left: 50%;
      transform: translate(-50%, -50%);
      z-index: 9999999;
-     color: black;
 }
 
 .modalStructure h4{
@@ -340,4 +340,106 @@ h1.logo-text{
      position: fixed;
      top: 5px;
      right: 5px;
+     color: black;
+}
+
+#add-employee-form{
+     width: 100%;
+}
+
+.form-inner{
+     padding: 20px;
+}
+
+#add-employee-form input[type=text], #add-employee-form input[type=password]{
+     width: 100%;
+     margin-bottom: 20px;
+     padding: 5px 5px 5px 0;
+     font-size: 18px;
+     background-color: transparent;
+     border: none;
+     border-bottom: .5px solid rgb(68, 68, 68);
+     color: white;
+}
+
+#add-employee-form input[type=submit]{
+     width: 100%;
+     padding: 10px;
+     background-color: #fd8e26;
+     color:white;
+     font-size: large;
+     font-family: 'Audiowide', cursive;
+     border: none;
+     outline: none;
+
+}
+
+.modalStructure2{
+     width: 50vw;
+}
+
+.manage-emp-body{
+     width: 100%;
+     height: 100%;
+     padding: 10px;
+     overflow-y: scroll;
+}
+.employee-list{
+     width: 100%;
+     list-style-type: none;
+}
+.an-employee{
+     width: 100%;
+     padding: 10px;
+     display: flex;
+     border: 1px solid whitesmoke;
+     border-radius: 5px;
+     margin-bottom: 10px;
+}
+.employee-info{
+     width: 90%;
+}
+
+.employee-btn-group{
+     width: 10%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+}
+
+.employee-btn-group button{
+     width: 100%;
+     height: 45%;
+     font-size: large;
+     border: none;
+     border-radius: 2px;
+}
+.employee-btn-group button:hover, .close-manage-employees-btn:hover{
+     cursor: pointer;
+}
+
+.employee-btn-group button:nth-of-type(2){
+     background-color: #ff6600;
+     color: white;
+}
+
+.close-manage-employees-btn{
+     position: fixed;
+     top: 5px;
+     right: 5px;
+     font-size: large;
+}
+
+.add-employee-btn{
+     margin-top: 10px;
+     font-size: large;
+}
+
+
+@media only screen and (max-width: 768px) {
+     
+     .modalStructure{
+          width: 100%;
+          
+     }
 }
