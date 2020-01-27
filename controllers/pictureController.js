@@ -4,7 +4,7 @@ var db = require("../models");
 
 
 // UPDATE route for Pictures
-router.post("/:bizName/config/logo", function(req, res) {
+router.put("/:bizName/config/logo", function(req, res) {
 
   console.log(req.body);
   
@@ -24,7 +24,8 @@ router.post("/:bizName/config/logo", function(req, res) {
     })
 
 // UPDATE route for background Image
-router.post("/:bizName/config/background", function(req, res) {
+router.put("/:bizName/config/background", function(req, res) {
+console.log("background");
 
   console.log(req.body);
   
