@@ -6,13 +6,13 @@ var db = require("../models");
 // might be able to just load employees from data
 router.get("/:bizName/config/user", function(req, res) {
       db.User.findAll({
-        where:{AccountId:response.Accountid},
+        where:{AccountId:req.Accountid},
         include:[db.Role]
         
       }).then(function(response){        
-        // res.json(response)
+        res.json(response)
         // console.log(response);
-        res.render("config", {User:response});
+        // res.render("config", {User:response});
       }) 
   });
 
