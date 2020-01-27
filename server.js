@@ -35,7 +35,7 @@ const accountController = require("./controllers/accountController");
 app.use(accountController)
 const configPageController = require("./controllers/configPageController");
 app.use(configPageController)
-const webController = require("./controllers/webController");
+const webController = require("./controllers/webcontroller");
 app.use(webController)
 const pictureController = require("./controllers/pictureController");
 app.use(pictureController)
