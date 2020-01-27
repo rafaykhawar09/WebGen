@@ -4,15 +4,35 @@ var db = require("../models");
 
 
 // UPDATE route for Pictures
-router.post("/:bizName/config/picture", function(req, res) {
+router.post("/:bizName/config/logo", function(req, res) {
 
   console.log(req.body);
   
 
     db.Picture.update({
-        picture_url:req.body.picture_url,
+        logo_url:req.body.logo_url,
         where: {
-          id: req.body.id
+          WebContentID: req.body.id
+        }
+      }).then(function(data){
+        res.send(data)
+      }).catch(function(err){
+          if (err)
+          console.log(err);
+      })
+
+    })
+
+// UPDATE route for background Image
+router.post("/:bizName/config/background", function(req, res) {
+
+  console.log(req.body);
+  
+
+    db.Picture.update({
+        hero_image_url:req.body.hero_image_url,
+        where: {
+          WebContentID: req.body.id
         }
       }).then(function(data){
         res.send(data)
