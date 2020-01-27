@@ -357,17 +357,40 @@ var myBGWidget = cloudinary.createUploadWidget({
      uploadPreset: 'egwkh4lw'
    }, (error, result) => {
      if (!error && result && result.event === "success") {
-       console.log('Done! Here is the image info: ', result.info.url);
-       $.put(`/${route}/picture/background`, {picture_url:result.info.url}, function () {
-     //     console.log("AA");
+       console.log('Done! Here is the image info: ', result.info.url)
+       let bgData = {
+            hero_image_url: result.info.url,
+            WebContentId: contentId
+       } 
+          
+       updateBackground(bgData);
+
+     }})
+       function updateBackground(post) {
+
+          $.ajax({
+          method: "PUT",
+          url:  `/${route}/config/background`,
+          data: post
+     })
+          .then(function(form) {
+              window.location.href = `/${route}/config`;
+     // console.log(form);
+     
+          });
+     };
+        
+     
+//        $.put(`/${route}/picture/background`, {hero_image_url:result.info.url}, function () {
+//      //     console.log("AA");
          
-         window.location.href = `/${form.url}`;
-       });
+//          window.location.href = `/${form.url}`;
+//        });
  
-     }
-     // console.log(result.info.url);
-   }
-   )
+//      }
+//      // console.log(result.info.url);
+//    }
+//    )
 
    //WIDGET FOR LOGO, NEEDS BUTTON
 // var myLogoWidget = cloudinary.createUploadWidget({
