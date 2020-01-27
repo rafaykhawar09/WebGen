@@ -337,17 +337,17 @@ $(".log-in-btn").on("click", function logIn() {
           window.location.href = `/${route}/config`;
      // });
 });
-$(".log-off-btn").on("click", function logOff() {
-     // $(".log-on-btn").on("click", function logIn(form) {
-     // console.log(form);
+// $(".log-off-btn").on("click", function logOff() {
+//      // $(".log-on-btn").on("click", function logIn(form) {
+//      // console.log(form);
 
 
-     // $.post(`/${route}/config`, form, function () {
+//      // $.post(`/${route}/config`, form, function () {
 
-          // window.location.href = `/${form.url}/config`;
-          window.location.href = `/${route}/`;
-     // });
-});
+//           // window.location.href = `/${form.url}/config`;
+//           window.location.href = `/${route}`;
+//      // });
+// });
 
 
 
@@ -357,6 +357,7 @@ var myBGWidget = cloudinary.createUploadWidget({
      uploadPreset: 'egwkh4lw'
    }, (error, result) => {
      if (!error && result && result.event === "success") {
+
        console.log('Done! Here is the image info: ', result.info.url)
        let bgData = {
             hero_image_url: result.info.url,
@@ -383,6 +384,7 @@ var myBGWidget = cloudinary.createUploadWidget({
      
 //        $.put(`/${route}/picture/background`, {hero_image_url:result.info.url}, function () {
 //      //     console.log("AA");
+
          
 //          window.location.href = `/${form.url}`;
 //        });
