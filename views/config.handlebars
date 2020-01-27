@@ -70,21 +70,21 @@
                 <div id="add-employee-form" class="hidden">
                     <form>
                          <div class="form-inner">
-                              <input type="text" id="name" placeholder="Name*">
+                              <input type="text" id="new-user-name" placeholder="Name*">
                                         
-                              <input type="text" id="email" placeholder="Email*">
+                              <input type="text" id="new-user-email" placeholder="Email*">
                               
-                              <input type="password" id="password" placeholder="Enter Password*">
+                              <input type="password" id="new-user-password" placeholder="Enter Password*">
 
-                              <div class="select-role">
+                              <div class="select-role" id="new-user-role">
                                    <p>Please select Employee's Role:</p>
-                                        <input id="web-designer" type="radio" name="role" value="web">
+                                        <input id="web-designer" type="radio" name="role" value=2>
                                         <label for="web-designer">Web Designer</label><br>
                                         
-                                        <input id="chef" type="radio" name="role" value="chef">
+                                        <input id="chef" type="radio" name="role" value=3>
                                         <label for="chef">Chef</label><br>
      
-                                        <input id="hostess" type="radio" name="role" value="hostess">
+                                        <input id="hostess" type="radio" name="role" value=4
                                         <label for="hostess">Host/Hostess</label><br>
                               </div>
                          </div>
@@ -92,7 +92,7 @@
                          
                          
 
-                         <input type="submit" value="Submit" class="add-btn" name="action">
+                         <input type="button" value="Submit" id="add-user-btn" name="action">
                     </form>
                </div>
           </div>
