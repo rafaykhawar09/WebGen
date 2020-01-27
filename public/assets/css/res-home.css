@@ -362,7 +362,7 @@ h1.logo-text{
      color: white;
 }
 
-#add-employee-form input[type=submit]{
+#add-employee-form input[type=button]{
      width: 100%;
      padding: 10px;
      background-color: #fd8e26;

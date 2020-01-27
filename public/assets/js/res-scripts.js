@@ -230,6 +230,7 @@ let newUserBtn = $("#add-user-btn");
 let newUserName = $("#new-user-name");
 let newUserEmail = $("#new-user-email");
 let newUserPassword = $("#new-user-password");
+let newUserRoleId = $("#new-user-role");
 
 
 // $(manageUsers).on("click", function unhide(form) {
@@ -250,7 +251,7 @@ $(newUserBtn).on("click", function addUser(event) {
           name: newUserName.val().trim(),
           email: newUserEmail.val().trim(),
           password: newUserPassword.val().trim(),
-          // RoleId: userRoleId,
+          RoleId: newUserRoleId.val(),
           AccountId: accountId
      };
      console.log(newUser);
