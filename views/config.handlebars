@@ -1,9 +1,12 @@
 
      <div class="hidden-field hidden" id="route">
-     {{dataValues.route}}
+     {{account.route}}
 </div>
 <div class="hidden-field1 hidden" id="accountId">
-     {{dataValues.id}}
+     {{account.id}}
+</div>
+<div class="hidden-field2 hidden" id="contentId">
+     {{webContent.id}}
 </div>
      
      
@@ -11,15 +14,12 @@
           <div class="close-overlay">
                <i class="fas fa-times"></i>
           </div>
-<div class="hidden-field1 hidden" id="contentId">
-    {{Web_content.dataValues.id}}
-</div>
 
           <div id="add-description-modal" class="hidden">
                <div class="modalStructure">
                     <h4>Update Description</h4>
                     <form>
-                         <textarea id="one-liner"></textarea>
+                         <textarea id="web-desc"> {{webContent.description}}</textarea>
                     
                          <input type="submit" value="Submit" class="submit-descript-btn" name="action">
                     </form>
@@ -65,7 +65,9 @@
                     <i class="fas fa-plus-circle add-employee-btn"></i>
                </div>
 
-               <div id="add-employee-form" class="hidden">
+               
+
+                <div id="add-employee-form" class="hidden">
                     <form>
                          <div class="form-inner">
                               <input type="text" id="name" placeholder="Name*">
@@ -73,8 +75,23 @@
                               <input type="text" id="email" placeholder="Email*">
                               
                               <input type="password" id="password" placeholder="Enter Password*">
+
+                              <div class="select-role">
+                                   <p>Please select Employee's Role:</p>
+                                        <input id="web-designer" type="radio" name="role" value="web">
+                                        <label for="web-designer">Web Designer</label><br>
+                                        
+                                        <input id="chef" type="radio" name="role" value="chef">
+                                        <label for="chef">Chef</label><br>
+     
+                                        <input id="hostess" type="radio" name="role" value="hostess">
+                                        <label for="hostess">Host/Hostess</label><br>
+                              </div>
                          </div>
-                    
+                         
+                         
+                         
+
                          <input type="submit" value="Submit" class="add-btn" name="action">
                     </form>
                </div>
@@ -86,7 +103,7 @@
           <div class="navbar-inner"> <!--Navbar-Inner Start-->
                
                <div class="logo"> <!--Logo Start-->
-                    <h1 class="logo-text">Logo</h1>
+                    <h1 class="logo-text">{{account.company_name}}</h1>
                </div> <!--Logo End-->
                
                <div class="hamburger"> <!--Hamburger Start-->
@@ -96,13 +113,17 @@
                </div> <!--Hamburger End-->
                
                <ul class="nav-group hidden"> <!--Navgroup Start-->
-                    <li class="nav-link"><a href="#" class="nav-link-text">Our Story</a></li>
-               
-                    <li class="nav-link"><a href="#" class="nav-link-text">Menu</a></li>
-               
-                    <li class="nav-link"><a href="#" class="nav-link-text">Contact & Reservations</a></li>
+                    
+              
 
-                    <li class="nav-link-text log-off-btn" style="cursor: pointer"><u>Log Off</u></li>
+               <li class="nav-link"><a href="/{{dataValues.route}}/menu" class="nav-link-text menu-link">Menu</a>
+               </li>
+               <li class="nav-link"><a href="/{{dataValues.route}}" class="nav-link-text log-off-link">Log Off</a>
+               </li>
+
+    
+
+                    {{!-- <li class="nav-link-text log-off-btn" style="cursor: pointer"><u>Log Off</u></li> --}}
                </ul> <!--Navgroup End-->
 
           </div> <!--Navbar-Inner End-->
@@ -111,8 +132,8 @@
      <div class="main">
           <div class="hero-img">
                <div class="hero-txt">
-                    <h1 style="font-size:50px">LOGO</h1>
-                    <p>This is the coolest shit ever</p>
+                    <h1 style="font-size:50px">{{account.company_name}}</h1>
+                    <p>{{webContent.description}}</p>
                </div>
           </div>
 
@@ -179,6 +200,7 @@
                                         <label for="autocomplete-input"></label>
                                    </div>
                               </div>
+
                               
                             
                               
