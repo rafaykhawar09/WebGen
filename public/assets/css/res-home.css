@@ -376,6 +376,7 @@ h1.logo-text{
 
 .modalStructure2{
      width: 50vw;
+     max-height: 430.500px;
 }
 
 .manage-emp-body{
@@ -435,6 +436,14 @@ h1.logo-text{
      font-size: large;
 }
 
+.select-role{
+     margin-top: 10px;
+     color: grey;
+}
+
+input[type=radio]{
+     margin-top: 10px;
+}
 
 @media only screen and (max-width: 768px) {
      
