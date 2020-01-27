@@ -37,14 +37,21 @@ let myData = {};
 
       }).then(function(response){    
         console.log(response.id);
+        var id=response.id
+        var route=response.route
         db.Menu.findAll({
           where:{AccountId:response.id},
           include:[db.Menu_sub_category, db.Menu_category]
           
-        }).then(function(response){        
-          // res.json(response)
+        }).then(function(response){   
+          var info={
+            id,
+            route,
+            Menu:response
+          }     
+          res.json(info)
           // console.log(response);
-          res.render("menu", {Menu:response});
+          // res.render("menu", info);
         }) 
       })
     });
@@ -53,10 +60,10 @@ let myData = {};
         db.Account.findOne({
           where:{route:req.params.bizName},
           include:[{model: db.Web_content, include: [{model: db.Picture}]},
-          {model: db.Hours}]
+          {model: db.Hours},{ model:db.User}]
         }).then(function(response){        
-          // res.json(response)
-          res.render("config", {account:response.dataValues, picture:response.dataValues.Web_content.Pictures[0], hours:response.dataValues.Hours[0]});
+          // res.json( {account:response.dataValues, webContent:response.Web_content.get({plain:true}),picture:response.dataValues.Web_content.Pictures[0], hours:response.dataValues.Hours[0]})
+          res.render("config", {account:response.dataValues,  webContent:response.Web_content.get({plain:true}),picture:response.dataValues.Web_content.Pictures[0], hours:response.dataValues.Hours[0]});
           console.log(response);
           
           
