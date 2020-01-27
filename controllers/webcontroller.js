@@ -21,19 +21,23 @@ var db = require("../models");
 
 // UPDATE Route for Web Items
       router.put("/:bizname/config/web", function(req, res) {
-        console.log(req.body);
+        console.log("This is req"+(req.body));
+      // var result=
+      var result=(JSON.parse(JSON.stringify(req.body)));
       
-        db.Web_content.update({
-            color_scheme:req.body.color_scheme,
-            description:req.body.description,
-            announcement:req.body.announcement,
-            our_story:req.body.our_story,
-            our_story_text:req.body.our_story_text,
-            announcement:req.body.advance_reservation_limit,
-                where: {
-                id: req.body.id
-              }
-          }).then(function(data){
+        db.Web_content.update(
+         
+          {description: result.description},
+          {where:{AccountId:result.AccountId}}
+          // color_scheme:req.body.color_scheme,
+            // description:req.body.description
+            // announcement:req.body.announcement,
+            // our_story:req.body.our_story,
+            // our_story_text:req.body.our_story_text,
+            // advance_reservation_limit:req.body.advance_reservation_limit,
+          ).then(function(data){
+            console.log("This is .then");
+            
                   res.send(data)
             //   })
           }).catch(function(err){
