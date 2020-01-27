@@ -1,0 +1,97 @@
+<div class="hidden-field hidden" id="route">
+     {{dataValues.route}}
+</div>
+<div class="hidden-field1 hidden" id="accountId">
+     {{dataValues.id}}
+</div>
+
+<div class="navbar">
+     <div class="navbar-inner">
+          <!--Navbar-Inner Start-->
+
+          <div class="logo">
+               <!--Logo Start-->
+               <h1 class="logo-text">{{dataValues.company_name}}</h1>
+          </div>
+          <!--Logo End-->
+
+          <div class="hamburger">
+               <!--Hamburger Start-->
+               <div class="bar"></div>
+               <div class="bar"></div>
+               <div class="bar"></div>
+          </div>
+          <!--Hamburger End-->
+
+          <ul class="nav-group hidden">
+               <!--Navgroup Start-->
+               {{!-- <li class="nav-link"><a href="/{{dataValues.route}}/story" class="nav-link-text story-link">Our Story</a>
+               </li> --}}
+
+               <li class="nav-link"><a href="/{{dataValues.route}}/menu" class="nav-link-text menu-link">Menu</a>
+               </li>
+               {{!-- <li class="nav-link"><a href="/{{dataValues.route}}/config" class="nav-link-text log-in-link">Log In</a> --}}
+               </li>
+
+               {{!-- <li class="nav-link"><a href="/{{dataValues.route}}/contact" class="nav-link-text contact-link">Contact & Reservations</a>
+               </li> --}}
+
+               {{!-- {{#if User.dataValues.email}} --}}
+               {{!-- <li class="nav-link-text log-off-btn" style="cursor: pointer"><u>Log Off</u></li> --}}
+
+               {{!-- {{else}} --}}
+               <li class="nav-link-text log-in-btn" style="cursor: pointer"><u>Log In</u></li>
+               {{!-- {{/if}} --}}
+
+
+
+          </ul>
+          <!--Navgroup End-->
+
+     </div>
+     <!--Navbar-Inner End-->
+</div>
+
+<div class="main">
+     <div class="hero-img">
+          <div class="hero-img" style="background-image: url({{Web_content.dataValues.our_story_text}});">
+          <div class="hero-txt">
+               {{!-- <img src = {{Web_content.dataValues.announcement}} > --}}
+               <h1 style="font-size:50px">{{dataValues.company_name}}</h1>
+               <p>{{Web_content.dataValues.description}}</p>
+          </div>
+
+     </div>
+
+{{!-- modals start  --}}
+{{!-- <div class="add-user-modal modalStructure hidden">
+               <h4>Add a User</h4>
+               <form id="add-user-form">
+                    <textarea id="new-user-name" placeholder="Enter Name"></textarea>
+                    <textarea id="new-user-email" placeholder="Enter Email"></textarea>
+                    <textarea id="new-user-password" placeholder="Enter Password"></textarea>
+
+                    <input type="submit" value="Submit" class="submit-add-user-btn" id="add-user-btn" name="action">
+               </form>
+          </div>
+
+
+
+</div> --}}
+
+<div class="footer">
+     <div class="footer-inner">
+          <span class="foot1">©Proudly created by WebGen</span>
+          <span class="foot1">Address, Postal Code. Tel:123-456-7890</span>
+     </div>
+</div>
+
+
+<script> document.title = '{{dataValues.route}}' </script>
+
+
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script src="../assets/js/res-scripts.js"></script>

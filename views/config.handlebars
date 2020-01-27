@@ -1,0 +1,227 @@
+
+     <div class="hidden-field hidden" id="route">
+     {{account.route}}
+</div>
+<div class="hidden-field1 hidden" id="accountId">
+     {{account.id}}
+</div>
+<div class="hidden-field2 hidden" id="contentId">
+     {{webContent.id}}
+</div>
+     
+     
+     <div id="web-content" class="customize-overlay hidden">
+          <div class="close-overlay">
+               <i class="fas fa-times"></i>
+          </div>
+
+          <div id="add-description-modal" class="hidden">
+               <div class="modalStructure">
+                    <h4>Update Description</h4>
+                    <form>
+                         <textarea id="web-desc"> {{webContent.description}}</textarea>
+                    
+                         <input type="submit" value="Submit" class="submit-descript-btn" name="action">
+                    </form>
+               </div>
+          </div>
+     </div>
+
+     <div id="manage-employee-modal" class="hidden">
+          <div class="modalStructure modalStructure2">
+               
+               <i class="fas fa-times close-manage-employees-btn"></i>  
+
+               <div class="modalStructure-header">
+                    <h4>Manage Employees</h4>
+               </div>
+
+               <div class="manage-emp-body">
+                    <ul class="employee-list">
+                         <li class="an-employee">
+                              <div class="employee-info">
+                                   <div class="emp-name-field">
+                                        Name: <span class="emp-name"></span>
+                                   </div>
+                                   <div class="emp-email-field">
+                                        Email: <span class="emp-email"></span>
+                                   </div>
+                                   <div class="emp-password-field">
+                                        Role: <span class="emp-password"></span>
+                                   </div>
+                              </div>
+                              <div class="employee-btn-group">
+                                   <button id="update-employee-info">
+                                        <i class="fas fa-edit"></i>
+                                   </button>
+                                   
+                                   <button id="delete-employee">
+                                        <i class="fas fa-trash-alt"></i>
+                                   </button>
+                              </div>
+                         </li>
+                    </ul>
+
+                    <i class="fas fa-plus-circle add-employee-btn"></i>
+               </div>
+
+               
+
+                <div id="add-employee-form" class="hidden">
+                    <form>
+                         <div class="form-inner">
+                              <input type="text" id="new-user-name" placeholder="Name*">
+                                        
+                              <input type="text" id="new-user-email" placeholder="Email*">
+                              
+                              <input type="password" id="new-user-password" placeholder="Enter Password*">
+
+                              <div class="select-role" id="new-user-role">
+                                   <p>Please select Employee's Role:</p>
+                                        <input id="web-designer" type="radio" name="role" value=2>
+                                        <label for="web-designer">Web Designer</label><br>
+                                        
+                                        <input id="chef" type="radio" name="role" value=3>
+                                        <label for="chef">Chef</label><br>
+     
+                                        <input id="hostess" type="radio" name="role" value=4
+                                        <label for="hostess">Host/Hostess</label><br>
+                              </div>
+                         </div>
+                         
+                         
+                         
+
+                         <input type="button" value="Submit" id="add-user-btn" name="action">
+                    </form>
+               </div>
+          </div>
+     </div>
+     
+
+     <div class="navbar">
+          <div class="navbar-inner"> <!--Navbar-Inner Start-->
+               
+               <div class="logo"> <!--Logo Start-->
+                    <h1 class="logo-text">{{account.company_name}}</h1>
+               </div> <!--Logo End-->
+               
+               <div class="hamburger"> <!--Hamburger Start-->
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+               </div> <!--Hamburger End-->
+               
+               <ul class="nav-group hidden"> <!--Navgroup Start-->
+                    
+              
+
+               <li class="nav-link"><a href="/{{account.route}}/menu" class="nav-link-text menu-link">Menu</a>
+               </li>
+               <li class="nav-link"><a href="/{{account.route}}" class="nav-link-text log-off-link">Log Off</a>
+               </li>
+
+    
+
+                    {{!-- <li class="nav-link-text log-off-btn" style="cursor: pointer"><u>Log Off</u></li> --}}
+               </ul> <!--Navgroup End-->
+
+          </div> <!--Navbar-Inner End-->
+     </div>
+
+     <div class="main">
+          <div class="hero-img">
+               <div class="hero-txt">
+                    <h1 style="font-size:50px">{{account.company_name}}</h1>
+                    <p>{{webContent.description}}</p>
+               </div>
+          </div>
+
+          <div class="sticky-nav">
+               <div class="sticky-nav-group-wrapper">
+                    <ul class="sticky-nav-group"> 
+                         <li id="customize-page" class="sticky-nav-link">Customize Page</li>
+                    
+
+                         <li id="manage-emps" class="sticky-nav-link">Manage Employees</li>
+
+                    
+                         <li id="manage-menu" class="sticky-nav-link">Manage Menu</li>
+                    
+                         <li id="view-pdf" class="sticky-nav-link">View/Print PDF Menu</li>
+                    
+                         <li id="manage-reservations" class="sticky-nav-link">Manage Reservations</li>
+                    
+                         <li id="view-reservations" class="sticky-nav-link">View Reservations</li>
+                    </ul>
+               </div>
+               <div class="sticky-menu">
+                    <i class="fas fa-caret-left"></i>
+                    <i class="fas fa-caret-right hidden"></i>
+               </div>
+          </div>
+     </div>
+
+     <div class="my-modal employees hidden">
+
+          <div class="container">
+               <div class="row">
+                    <div class="col s12">
+
+                         <form id="my-account-form">
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Name</h6>
+                                        <input type="text" id="autocomplete-input1 " class="autocomplete name">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+                              
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Email</h6>
+                                        <input type="text" id="autocomplete-input2 " class="autocomplete email">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+                              
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Password</h6>
+                                        <input type="text" id="autocomplete-input3 " class="autocomplete password">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+                              
+                              <div class="row">
+                                   <div class="input-field col s6">
+                                        <h6>Re-enter Password</h6>
+                                        <input type="text" id="autocomplete-input4 " class="autocomplete password2">
+                                        <label for="autocomplete-input"></label>
+                                   </div>
+                              </div>
+
+                              
+                            
+                              
+                              <button class="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
+                              </button>
+                         </form>
+                    </div>
+               </div>
+          </div>
+     </div> 
+
+     <div class="footer">
+          <div class="footer-inner">
+               <span class="foot1">©Proudly created by WebGen</span>
+               <span class="foot1">Address, Postal Code. Tel:123-456-7890</span>
+          </div>
+     </div>
+
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
+
+     <!-- <script src="../assets/js/res-scripts.js"></script> -->
+     <script src="../assets/js/res-scripts.js"></script>
+

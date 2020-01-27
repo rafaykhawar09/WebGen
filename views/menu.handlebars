@@ -1,0 +1,87 @@
+<div class="hidden-field hidden" id="route">
+     {{dataValues.route}}
+</div>
+
+<div class="hidden-field1 hidden" id="accountId">
+
+     {{dataValues.id}}
+</div>
+
+
+
+<div class="navbar">
+     <div class="navbar-inner">
+          <!--Navbar-Inner Start-->
+
+          <div class="logo">
+               <!--Logo Start-->
+               <h1 class="logo-text">{{dataValues.company_name}}</h1>
+          </div>
+          <!--Logo End-->
+
+          <div class="hamburger">
+               <!--Hamburger Start-->
+               <div class="bar"></div>
+               <div class="bar"></div>
+               <div class="bar"></div>
+          </div>
+          <!--Hamburger End-->
+
+          <ul class="nav-group hidden">
+               <!--Navgroup Start-->
+               {{!-- <li class="nav-link"><a href="/{{dataValues.route}}/story" class="nav-link-text">Our Story</a></li> --}}
+
+               <li class="nav-link"><a href="/{{route}}" class="nav-link-text">Home</a></li>
+               {{!-- <li class="nav-link-text log-in-btn" style="cursor: pointer"><a href="/{{dataValues.route}}" class="nav-link-text">Log In</a></li> --}}
+               {{!-- {{!-- <li class="nav-link-text log-in-btn" style="cursor: pointer"><u>Log In</u></li> --}} --}}
+
+
+               {{!-- <li class="nav-link"><a href="/{{dataValues.route}}/contact" class="nav-link-text">Contact & Reservations</a></li> --}}
+          </ul>
+          <!--Navgroup End-->
+     </div>
+     <!--Navbar-Inner End-->
+</div>
+
+
+<div class="container">
+
+     <div class="menu">
+          {{!-- <h1 style="font-family: 'Georgia', sans-serif;">Menu</h1> --}}
+          {{!-- <h3>Menu</h3> --}}
+          <br>
+          <br>
+          <div>
+               <ul>
+                    {{#each Menu}}
+                    <img class="someClass" src="{{dataValues.picture_url}}">
+                    <li>
+                         <p class=menu-item>Item: {{dataValues.menu_item}}</p>
+                         <p>Description: {{dataValues.item_description}}</p>
+                         <p class="menu-item">Price: {{dataValues.price}}</p>
+                    </li>
+                    {{/each}}
+               </ul>
+          </div>
+
+          <!-- <div class="items-right">
+    
+                </div> -->
+     </div>
+</div>
+
+
+
+
+
+
+<div class="footer">
+     <div class="footer-inner">
+          <span class="foot1">©Proudly created by WebGen</span>
+          <span class="foot1">Address, Postal Code. Tel:123-456-7890</span>
+     </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="../assets/js/res-scripts.js"></script>
+   <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
