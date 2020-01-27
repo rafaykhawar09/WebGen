@@ -24,6 +24,8 @@ let routeField = $("#route")
 let route = routeField.text().trim()
 let accountField = $("#accountId")
 let accountId = accountField.text().trim()
+let contentField = $("#contentId")
+let contentId = contentField.text().trim()
 
 var stickyMenuBtnHeightCalcFlag = true;
 
