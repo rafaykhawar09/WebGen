@@ -1,6 +1,6 @@
 var db = require("../models");
 
-let acctId = 2;
+let acctId = 11;
 let wcId = acctId
 
 db.Account.create(
@@ -10,7 +10,7 @@ db.Account.create(
         company_name: "Bill's Road House",
         address: "123 Center Street, Bellevue, WA  98004",
         phone: "206.555.3434",
-        route: "bills"
+        route: "roadhouse"
     }
 ).then(function (dbAccount) {
     console.log(dbAccount);
@@ -48,9 +48,9 @@ db.Account.create(
                 {
                     color_scheme: "Red",
                     description: "Welcome to my Restaurant",
-                    announcement: "Today's Specials are Salmon Stuffed with Spinach",
+                    announcement: "https://res.cloudinary.com/crunchy/image/upload/v1580066226/dsoxpprtwrh44dn1vb8j.png",
                     our_story: true,
-                    our_story_text: "Our story starts in the a small town up in the hills of northern Italy...",
+                    our_story_text: "https://res.cloudinary.com/crunchy/image/upload/v1579900426/zfcoy0cweksi2zdlhzqk.jpg",
                     advance_reservation_limit: 90,
                     AccountId: acctId
                 }).then(function (dbWeb) {
@@ -62,11 +62,11 @@ db.Account.create(
                     db.Picture.create(
                         {
                             hero_image_url: "https://res.cloudinary.com/crunchy/image/upload/v1579900426/zfcoy0cweksi2zdlhzqk.jpg",
-                            logo_url: "https://res.cloudinary.com/crunchy/image/upload/v1579899905/ehtlcxaune0yn29zl3ew.png",
+                            logo_url: "https://res.cloudinary.com/crunchy/image/upload/v1580066226/dsoxpprtwrh44dn1vb8j.png",
                             story_background_url: "https://res.cloudinary.com/crunchy/image/upload/v1579908041/keigjw8t9b7zbx6wnyow.jpg",
                             story_pic1_url: "https://res.cloudinary.com/crunchy/image/upload/v1579908048/cqzmowflqmox4tudhytk.jpg",
                             story_pic2_url: "https://res.cloudinary.com/crunchy/image/upload/v1579908056/al9cj7xr8hxcriiidmv5.jpg",
-                            WebContentId: wcId
+                            WebContentId: dbWeb.id
                         }
                     ).then(function (dbPics) {
                         console.log(dbPics);

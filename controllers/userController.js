@@ -3,6 +3,7 @@ var router = express.Router()
 var db = require("../models");
 
 // Get route for managing users
+// might be able to just load employees from data
 router.get("/:bizName/config/user", function(req, res) {
       db.User.findAll({
         where:{AccountId:response.Accountid},
@@ -27,7 +28,8 @@ router.post("/:bizname/config/user", function(req, res) {
         name:req.body.name,
         password:req.body.password,
         AccountId:req.body.AccountId,
-        RoleId:req.body.RoleId
+        RoleId: 3
+        // RoleId:req.body.RoleId
       }).then(function(data){
           console.log("add item");
           

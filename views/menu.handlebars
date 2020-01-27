@@ -1,10 +1,18 @@
+<div class="hidden-field hidden" id="route">
+     {{dataValues.route}}
+</div>
+<div class="hidden-field1 hidden" id="accountId">
+     {{dataValues.id}}
+
+
+
 <div class="navbar">
      <div class="navbar-inner">
           <!--Navbar-Inner Start-->
 
           <div class="logo">
                <!--Logo Start-->
-               <h1 class="logo-text">Logo</h1>
+               <h1 class="logo-text">{{dataValues.company_name}}</h1>
           </div>
           <!--Logo End-->
 
@@ -18,11 +26,11 @@
 
           <ul class="nav-group hidden">
                <!--Navgroup Start-->
-               <li class="nav-link"><a href="#" class="nav-link-text">Our Story</a></li>
+               <li class="nav-link"><a href="/{{dataValues.route}}/story" class="nav-link-text">Our Story</a></li>
 
-               <li class="nav-link"><a href="#" class="nav-link-text">Menu</a></li>
+               <li class="nav-link"><a href="/{{dataValues.route}}" class="nav-link-text">Home</a></li>
 
-               <li class="nav-link"><a href="#" class="nav-link-text">Contact & Reservations</a></li>
+               <li class="nav-link"><a href="/{{dataValues.route}}/contact" class="nav-link-text">Contact & Reservations</a></li>
           </ul>
           <!--Navgroup End-->
      </div>

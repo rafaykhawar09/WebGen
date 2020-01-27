@@ -1,18 +1,20 @@
+<div class="hidden-field hidden" id="route">
+    {{dataValues.route}}
+</div>
+<div class="hidden-field1 hidden" id="accountId">
+    {{dataValues.id}}
+</div>
+
+
 <div id="web-content" class="customize-overlay hidden">
     <div class="close-overlay">
         <i class="fas fa-times"></i>
     </div>
-    <div class="hidden-field hidden">
-        {{dataValues.route}}
-    </div>
-    <div class="hidden-field1 hidden">
-        {{dataValues.id}}
-    </div>
     <div class="hidden" id="add-description-modal">
         <div class=" modalStructure">
-            <h4>Add a Description</h4>
+            <h4>Update Description</h4>
             <form>
-                <textarea id="one-liner" ></textarea>
+                <textarea id="web-desc" >{{Web_content.dataValues.description}}</textarea>
 
                 <input type="submit" value="Submit" class="submit-descript-btn" name="action">
             </form>
@@ -40,7 +42,7 @@
 
         <div class="logo">
             <!--Logo Start-->
-            <h1 class="logo-text">Logo</h1>
+            <h1 class="logo-text">{{dataValues.company_name}}</h1>
         </div>
         <!--Logo End-->
 
@@ -54,11 +56,16 @@
 
         <ul class="nav-group hidden">
             <!--Navgroup Start-->
-            <li class="nav-link"><a href="#" class="nav-link-text">Our Story</a></li>
+            <li class="nav-link"><a href="/{{dataValues.route}}/story" class="nav-link-text">Our Story</a></li>
 
-            <li class="nav-link"><a href="#" class="nav-link-text">Menu</a></li>
+            <li class="nav-link"><a href="/{{dataValues.route}}/menu/config" class="nav-link-text">Menu</a></li>
 
-            <li class="nav-link"><a href="#" class="nav-link-text">Contact and Reservations</a></li>
+            <li class="nav-link"><a href="/{{dataValues.route}}/contact" class="nav-link-text">Contact and Reservations</a></li>
+
+               {{!-- <li class="nav-link-text log-off-btn" style="cursor: pointer"><u>Log Off</u></li> --}}
+               <li class="nav-link-text log-off-btn" style="cursor: pointer"><a href="/{{dataValues.route}}" class="nav-link-text">Log Off</a></li>
+
+
         </ul>
         <!--Navgroup End-->
 
@@ -68,9 +75,13 @@
 
 <div class="main">
     <div class="hero-img">
+          <div class="hero-img" style="background-image: url({{Web_content.dataValues.our_story_text}});">
+
         <div class="hero-txt">
-            <h1 style="font-size:50px">LOGO</h1>
-            <p>This is the coolest shit ever</p>
+            {{!-- <h1 style="font-size:50px">LOGO</h1> --}}
+               <img src = {{Web_content.dataValues.announcement}} >
+               <h1 style="font-size:50px">{{dataValues.company_name}}</h1>
+            <p>{{Web_content.dataValues.description}}</p>
         </div>
     </div>
 

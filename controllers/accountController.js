@@ -28,13 +28,17 @@ router.post("/createaccount", function(req, res) {
               description: "Welcome to my restaurant, where you should never go home hungry!",
               our_story_text: "We began in my father's garage after I graduated from culinary school",
               AccountId:data.dataValues.id
-          }).then(function(data){
+          }).then(function(webData){
           db.Hours.create({
                 start_day: "Monday",
                 end_day: "Sunday",
                 open: "11:00 am",
                 close: "10:00 pm",
                 AccountId:data.dataValues.id
+            }).then(function(data){
+              db.Picture.create({
+                logo_url: "https://res.cloudinary.com/crunchy/image/upload/v1580066226/dsoxpprtwrh44dn1vb8j.png",
+                WebContentId:webData.id
             }).then(function(data){
               db.Menu.bulkCreate([{
                     menu_item: "Prime Ribeye",
@@ -73,6 +77,7 @@ router.post("/createaccount", function(req, res) {
         })
           })    
         })
+      })
       }).catch(function(err){
           console.log(err);
           if (err)
