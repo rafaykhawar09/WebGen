@@ -93,13 +93,28 @@ customizePg.click(() => {
      }
 });
 
-
 $("#manage-emps").click(()=>{
      if($("#manage-employee-modal").hasClass("hidden")){
           $("#manage-employee-modal").removeClass("hidden");
      }
 });
 
+$(".close-manage-employees-btn").click(()=>{
+     $("#manage-employee-modal").addClass("hidden");
+});
+
+
+var addEmployee = $(".add-employee-btn");
+// console.log(addEmployee)
+
+addEmployee.click(()=>{
+
+     console.log("hunter");
+     if($("#add-employee-form").hasClass("hidden")){
+          $("#add-employee-form").removeClass("hidden");
+          $(".manage-emp-body").addClass("hidden");
+     }
+});
 
 
 
