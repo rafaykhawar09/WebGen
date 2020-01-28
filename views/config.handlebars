@@ -130,8 +130,10 @@
      </div>
 
      <div class="main">
-          <div class="hero-img">
+          <div class="hero-img"
+              style="background-image: url({{picture.dataValues.hero_image_url}});">
                <div class="hero-txt">
+                    <img src="{{picture.dataValues.logo_url}}">
                     <h1 style="font-size:50px">{{account.company_name}}</h1>
                     <p>{{webContent.description}}</p>
                </div>
