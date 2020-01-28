@@ -25,15 +25,11 @@ router.put("/:bizName/config/logo", function(req, res) {
 
 // UPDATE route for background Image
 router.put("/:bizName/config/background", function(req, res) {
-console.log("background");
 
-  console.log(req.body);
-  
-
-    db.Picture.update({
-        hero_image_url:req.body.hero_image_url,
-        where: {
-          WebContentID: req.body.id
+    db.Picture.update(
+      {hero_image_url:req.body.hero_image_url},
+       { where: {
+          WebContentId: parseInt(req.body.WebContentId)
         }
       }).then(function(data){
         res.send(data)
