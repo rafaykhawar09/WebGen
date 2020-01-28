@@ -237,7 +237,7 @@ app.get('/secondseed', (req, res) => {
                   menu_item: "Deluxe Burger",
                   item_description: "One third pound of our special ground beef blend topped with bacon and Tilamook cheddar.",
                   price: 9.50,
-                  optional_price: 0,
+                  optional_price: 0, 
                   gluten_free_ind: false,
                   vegan_ind: false,
                   vegetarian_ind: false,
